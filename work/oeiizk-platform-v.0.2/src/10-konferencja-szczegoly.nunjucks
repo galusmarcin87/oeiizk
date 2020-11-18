@@ -1,0 +1,168 @@
+{% extends '_layouts/base.nunjucks' %}
+
+
+
+{% block content %}
+
+{%include "_partials/_banner.nunjucks" %}
+
+<section class="szkolenie">
+<div class="item">
+  <div class="container">
+  <div class="row">
+    <div class="col">
+    
+      <h1 class="mb-4">V Konferencja „Bezpieczeństwo informacyjne w szkole i placówce oświatowej”</h1>
+    
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-6">
+        <div class="item-info">
+            <div class="row">
+                <div class="col-lg-6">
+                        
+
+                    <table class="project-info">
+                        <tr>
+                            <td>Termin:</td>
+                            <td>22.10.2018</td>
+                        </tr>
+                        <tr>
+                            <td>Godziny:</td>
+                            <td>10:00 | 15:00 | 17:00</td>
+                        </tr>
+                        <tr>
+                            <td>Projekt:</td>
+                            <td>Szkolenie w ramach projektu dla
+			dzieci przedszkolnych finansowany
+			z funduszy unijnych.</td>
+                        </tr>
+                    </table>
+
+                </div>
+                <div class="col-lg-6">
+                    <div class="image">
+                        <img src="images/szkolenie1.jpg" class="image-fluid" alt="">
+                        <span class="badge">PINS_01</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text">
+                <p class="point">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="description">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<p>
+        </div>
+
+    </div>
+  </div>
+
+  <div class="bg-light p-3 mb-4">
+    <div class="row">
+        <div class="col-md-6 text-center text-md-left mb-3 mb-md-0">
+            <a href="#" class="btn btn-outline-primary font-weight-bold">Program</a>
+        </div>
+        <div class="col-md-6 text-center text-md-right">
+            <a href="#" class="btn btn-danger btn-signup">Zapisz się na konferencję</a>
+        </div>
+    </div>
+  </div>
+
+  <div class="content">
+
+  <h3>Informacje dodatkowe</h3>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  
+  <h3>Warsztaty</h3>
+<div class="table-responsive">
+
+  <table>
+  <thead>
+    <tr>
+        <th>Grupa warsztatów</th>
+        <th>Godziny</th>
+        <th>Temat</th>
+        <th>Prowadzący</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>1</td>
+        <td>2018-11-05 (poniedziałek)<br />w godz. 15:45 - 19:45</td>
+        <td>Ośrodek Edukacji Informatycznej i Zastosowań Komputerów, ul. Nowogrodzka 73, sala 10</td>
+        <td>Jan Kowalski</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>2018-11-05 (poniedziałek)<br />w godz. 15:45 - 19:45</td>
+        <td>Ośrodek Edukacji Informatycznej i Zastosowań Komputerów, ul. Nowogrodzka 73, sala 10</td>
+        <td>Jan Kowalski</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>2018-11-05 (poniedziałek)<br />w godz. 15:45 - 19:45</td>
+        <td>Ośrodek Edukacji Informatycznej i Zastosowań Komputerów, ul. Nowogrodzka 73, sala 10</td>
+        <td>Jan Kowalski</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+  <a href="#" class="btn btn-outline-primary">Materiały online</a>
+
+  <h3>Cennik</h3>
+  <p>Szkolenie bezpłatne na nauczycieli województwa mazowieckiego.</p>
+  <a href="#" class="btn btn-outline-primary" data-toggle="collapse" data-target="#cennik" aria-expanded="false" aria-controls="cennik">Więcej informacji</a>
+
+  <div class="collapse fade" id="cennik">
+  <div class="pt-4">
+<div class="table-responsive">
+
+   <table>
+    <thead>
+       <tr>
+           <th>Nazwa</th>
+           <th>Cena</th>
+       </tr>
+       </thead>
+       <tbody>
+       <tr>
+           <td>Nauczyciele i pracownicy pedagogiczni placówek prowadzonych przez Samorząd Województwa Mazowieckiego.</td>
+           <td>90.00zł</td>
+       </tr>
+       <tr>
+           <td>Nauczyciele i pracownicy pedagogiczni placówek prowadzonych przez Samorząd Województwa Mazowieckiego.</td>
+           <td>90.00zł</td>
+       </tr>
+       <tr>
+           <td>Nauczyciele i pracownicy pedagogiczni placówek prowadzonych przez Samorząd Województwa Mazowieckiego.</td>
+           <td>90.00zł</td>
+       </tr>
+       <tr>
+           <td>Nauczyciele i pracownicy pedagogiczni placówek prowadzonych przez Samorząd Województwa Mazowieckiego.</td>
+           <td>90.00zł</td>
+       </tr>
+       <tr>
+           <td>Nauczyciele i pracownicy pedagogiczni placówek prowadzonych przez Samorząd Województwa Mazowieckiego.</td>
+           <td>90.00zł</td>
+       </tr>
+       </tbody>
+
+   </table> 
+    </div>
+    </div>
+    
+    </div>
+
+    </div>
+
+  </div>
+</div>
+</section>
+
+{% endblock %}

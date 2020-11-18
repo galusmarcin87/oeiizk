@@ -1,0 +1,47 @@
+<h3>Filtruj listę szkoleń</h3>
+<form action="#" method="POST">
+    <div class="row">
+        <div class="col">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Treść szukanej frazy" aria-label="Treść szukanej frazy" aria-describedby="button-addon2">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="button" id="button-addon2">SZUKAJ</button>
+                </div>
+                </div>
+        </div>
+    </div>
+
+  <div class="row form-group">
+    <div class="col">
+      <label for="forma">Forma szkolenia</label>
+      <select id="forma" class="custom-select">
+        <option selected>-wybierz-</option>
+        <option value="1">One</option>
+    </select>
+    </div>
+    <div class="col">
+      <label for="grupa">Grupa przedmiotów</label>
+      <select id="grupa" class="custom-select">
+        <option selected>-wybierz-</option>
+        <option value="1">One</option>
+    </select>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <label for="grupa2">Grupa przedmiotów</label>
+      <select id="grupa2" class="custom-select">
+        <option selected>-wybierz-</option>
+        <option value="1">One</option>
+    </select>
+    </div>
+    <div class="col">
+      <label for="delegatura">Delegatura</label>
+      <select id="delegatura" class="custom-select">
+        <option selected>-wybierz-</option>
+        <option value="1">One</option>
+    </select>
+    </div>
+  </div>
+</form>

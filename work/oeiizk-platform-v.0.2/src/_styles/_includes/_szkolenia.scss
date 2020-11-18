@@ -1,0 +1,452 @@
+.szkolenia-list {
+    color: #7d7d7d;
+    font-size: rem-calc(14);
+    .item {
+        margin-bottom: 30px;
+        .item-inner {
+        border:1px solid #ebe9f0;
+        padding: 15px 20px;
+        }
+        .item-info {
+            font-weight: 600;
+            font-size: rem-calc(13);
+            .badge {
+                position: absolute; 
+                top: 10px;
+                right: 10px;
+                background: $primary;
+                color: #ffffff;
+                font-size: rem-calc(12);
+                font-weight: 700;
+                padding: 3px 6px;
+
+
+            }
+        }
+        .description {
+            line-height: 1.7;
+        }
+
+        .point {
+            padding-left: 10px;
+            position: relative;
+            margin-bottom: 0;
+            font-size: rem-calc(13);
+
+            &:before {
+                display: inline-block;
+                content : '\f0da';
+                color:$red;
+                font-family: FontAwesome;
+                font-size: rem-calc(16);
+                line-height: 22px;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+        }
+        a.go {
+            display: inline-block;
+            margin-left: 4px;
+            padding: 1px 10px;
+            background: #ebe9ef;
+            color: $red;
+            font-size: rem-calc(12);
+            border-radius:2px;
+        }
+        .tags {
+            .tag {
+                display: inline-block;
+                background: #f5f4f7;
+                color: #b8b6c4;
+                padding: 3px 6px;
+                border-radius:2px;
+                min-width:30px;
+                text-align: center;
+                font-size: rem-calc(12);
+                font-weight: bold;
+                margin-left: 10px;
+
+                &.tag-main {
+                    color: $primary;
+                    background: #ebe9ef;
+                }
+                
+            }
+        }
+        .more {
+            .text {
+                font-size: rem-calc(13);
+            }
+            .btn {
+                font-weight: 600;
+            }
+        }
+        .dropdown-item {
+            font-size: rem-calc(13);     
+            color: #7d7d7d;
+            font-weight: 600;  
+        }
+    }
+}
+
+
+
+.szkolenia-list.grid {
+    .list-title {
+        display: none;
+    }
+    .item {
+
+        @include make-col-ready();
+        @include media-breakpoint-up(lg) {
+            @include make-col(6);
+        }
+
+        .tags {
+            margin-bottom: 20px;
+        }
+
+        .main {
+            @include make-row();
+        }
+
+        .item-info {
+            @include make-col-ready();
+            @include media-breakpoint-up(md) {
+                @include make-col(5);
+
+
+            }
+        }
+        .description {
+            @include make-col-ready();
+            @include media-breakpoint-up(md) {
+                @include make-col(7);
+                padding-top: 30px;
+
+            }
+        }
+        .more {
+            @include make-col-ready();
+            
+            @include media-breakpoint-up(xs) {
+                @include make-col(12);
+
+            }
+            .more-wrap {
+                @include make-row();
+            }
+            .text {
+                margin-bottom: 15px;
+                @include make-col-ready();
+                @include media-breakpoint-up(md) {
+                    @include make-col(9);
+                    margin-bottom: 0;
+                }
+            }
+            .link {
+                @include make-col-ready();
+                @include media-breakpoint-up(md) {
+                    @include make-col(3);
+                }
+                
+            }
+        }
+
+        .image {
+            position: relative;
+            margin-bottom: 15px;
+            img {
+                width: 100%;
+            }
+            .badge {
+            
+            background: #ffffff;
+            color: $primary;
+            }
+        }
+
+    }
+}
+
+.szkolenia-list.list {
+    .top-title {
+        display: none;
+    }
+    .item {
+        @include make-col-ready();
+        @include make-col(12);
+    }
+    .tags {
+        margin-bottom: 10px;
+    }
+    .main {
+        @include make-row();
+    }
+    .image {
+        img {
+            display: none;
+        }
+    }
+    
+    .item-info {
+        @include make-col-ready();
+        @include media-breakpoint-up(md) {
+            @include make-col(5);
+
+
+        }
+    }
+    .description {
+        @include make-col-ready();
+        @include media-breakpoint-up(md) {
+            @include make-col(5);
+            border-left:1px solid #d1cfda;
+            
+
+        }
+    }
+    .more {
+        @include make-col-ready();
+        
+        @include media-breakpoint-up(md) {
+            @include make-col(2);
+            border-left:1px solid #d1cfda;
+
+
+        }
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .text {
+            display: none;
+        }
+    }
+}
+
+.profil-szkolenia.list {
+        
+    .item-info {
+        
+        @include media-breakpoint-up(md) {
+            @include make-col(9);
+            
+
+        }
+    }
+    .more {
+     
+        
+        @include media-breakpoint-up(md) {
+            @include make-col(3);
+        }
+        .btn {
+            width: 100%;
+            margin-top: 10px;
+            &:first-child {
+                margin-top: 0;
+            }
+        }
+    }
+    .tags, .hours {
+        @include media-breakpoint-up(md) {
+            width: 50%;
+            float: left;
+        }
+    }
+    .image {
+        
+            clear:both;
+            
+        
+    }
+
+    .more {
+        .btn {
+            font-size: rem-calc(14);
+        }
+    }
+
+}
+
+
+
+.szkolenie {
+    padding-top: 0;
+    color: #7d7d7d;
+    font-size: rem-calc(14);
+    .item {
+        margin-bottom: 30px;
+        .item-inner {
+        border:1px solid #ebe9f0;
+        padding: 15px 20px;
+        }
+        .hours {
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+        .btn-signup {
+            font-weight: bold;
+            font-size: rem-calc(16); 
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+        h3 {
+            margin-top: 30px;
+        }
+        .item-info {
+            font-weight: 400;
+            font-size: rem-calc(13);
+            margin-bottom: 30px;
+            .image {
+                position: relative;
+                margin-bottom: 15px;
+                img {
+                    width: 100%;
+                }
+                .badge {
+                
+                background: #ffffff;
+                color: $primary;
+                }
+            }
+            .badge {
+                position: absolute; 
+                top: 10px;
+                right: 10px;
+                
+                font-size: rem-calc(12);
+                font-weight: 700;
+                padding: 3px 6px;
+                
+            
+                    background: #ffffff;
+                    color: $primary;
+                    
+
+
+            }
+        }
+        .description {
+            line-height: 1.7;
+        }
+
+        .point {
+            padding-left: 10px;
+            position: relative;
+            margin-bottom: 0;
+            font-size: rem-calc(13);
+
+            &:before {
+                display: inline-block;
+                content : '\f0da';
+                color:$red;
+                font-family: FontAwesome;
+                font-size: rem-calc(16);
+                line-height: 22px;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+        }
+        a.go {
+            display: inline-block;
+            margin-left: 4px;
+            padding: 1px 10px;
+            background: #ebe9ef;
+            color: $red;
+            font-size: rem-calc(12);
+            border-radius:2px;
+        }
+        .tags {
+            .tag {
+                display: inline-block;
+                background: #f5f4f7;
+                color: #b8b6c4;
+                padding: 3px 6px;
+                border-radius:2px;
+                min-width:30px;
+                text-align: center;
+                font-size: rem-calc(12);
+                font-weight: bold;
+                margin-left: 10px;
+
+                &.tag-main {
+                    color: $primary;
+                    background: #ebe9ef;
+                }
+                
+            }
+        }
+        .more {
+            .text {
+                font-size: rem-calc(13);
+            }
+            .btn {
+                font-weight: 600;
+            }
+        }
+        .dropdown-item {
+            font-size: rem-calc(13);     
+            color: #7d7d7d;
+            font-weight: 400;    
+        }
+    }
+
+    .project-info {
+        
+            margin-bottom: 30px; 
+        
+        td {
+            padding: 2px 0px 2px 0;
+            font-size: rem-calc(13);
+            font-weight: 400;
+            vertical-align: top;
+            &:first-child {
+                padding-right: 20px;
+            }
+        }
+    }
+    .content {
+        table {
+            width: 100%;
+            border:1px solid #ebe9f0;
+            margin-bottom: 30px;
+            tr {
+                th {
+                    background: #ebe9ef;
+                    color: $blue;
+                    font-weight: 800;
+                    padding: 8px 15px;
+                    border-left:1px solid #c1becd;
+                    &:first-child {
+                        border-left: 0;
+                    }
+                }
+                td {
+                    border-left:1px solid #c1becd;
+                    padding: 8px 15px;
+                    color: #362b60;
+
+                    &:first-child {
+                        border-left: 0;
+                    }
+
+                }
+            }
+            tbody {
+                tr {
+                    td {
+                        border-top:1px solid #c1becd;
+                    }
+                    &:first-child {
+                        td {
+                            border-top:0
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,18 @@
+<form action="#" method="POST" class="search-form form-light">
+    <div class="row form-group">
+        <div class="col-12">
+            
+            <input id="search" name="search" type="text" class="form-control" placeholder="Wyszukaj" >
+        </div>
+    </div>
+    
+    <div class="row align-items-center form-group ">
+
+        <div class="col text-right">
+            <button type="submit" class="btn btn-danger">Szukaj</button>
+        </div>
+        
+    </div>
+
+    
+</form>

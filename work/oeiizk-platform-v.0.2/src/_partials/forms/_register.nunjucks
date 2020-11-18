@@ -1,0 +1,105 @@
+<form action="#" method="POST" class="register-form form-light">
+
+{% set forms = [
+    {
+        name: 'name',
+        type: 'text',
+        label: 'Imię'
+    },
+    {
+        name: 'surname',
+        type: 'text',
+        label: 'Nazwisko'
+    },
+    {
+        name: 'login',
+        type: 'text',
+        label: 'Login'
+    },
+    {
+        name: 'email',
+        type: 'email',
+        label: 'Adres e-mail'
+    },
+    {
+        name: 'password',
+        type: 'password',
+        label: 'Hasło'
+    },
+    {
+        name: 'password_repeat',
+        type: 'password',
+        label: 'Powtórz hasło'
+    },
+    {
+        name: 'gender',
+        type: 'select',
+        label: 'Płeć'
+    },
+    {
+        name: 'birthdate',
+        type: 'date',
+        label: 'Data urodzenia'
+    },
+    {
+        name: 'place_of_birth',
+        type: 'text',
+        label: 'Miejsce urodzenia'
+    }] %}
+    {% for item in forms %}
+
+    <div class="row form-group">
+        <div class="col">
+            {%if item.type=="select" %}
+                <label for="register-{{item.name}}">{{item.label}}</label>
+                  <select id="register-{{item.name}}" name="register-{{item.name}}" class="custom-select">
+                    <option selected>-wybierz płeć-</option>
+                    <option value="m">Mężczyzna</option>
+                    <option value="f">Kobieta</option>
+                </select>
+            {% elif item.type=="date" %}
+            <label for="register-{{item.name}}">{{item.label}}</label>
+            <div class="input-group date" id="datetimepicker8" data-target-input="nearest">
+                <input id="register-{{item.name}}" type="{{item.type}}" class="form-control" >
+                <div class="input-group-append" data-target="#datetimepicker8" data-toggle="datetimepicker">
+                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                </div>
+            </div>
+            {% else %}
+            <label for="register-{{item.name}}">{{item.label}}</label>
+            <input id="register-{{item.name}}" type="{{item.type}}" class="form-control" >
+            {% endif %}
+
+        </div>
+    </div>
+
+
+    {%endfor %}
+
+    
+    <div class="row form-group">
+        <div class="col">
+            <div class="">
+                <input type="checkbox" id="register-agree">
+                <label for="register-agree">Wyrażam zgodę na przetwarzanie moich danych osobowych zgodnie z klauzulą 
+informacyjną, której pełen tekst zamieszczony jest poniżej.*</label>
+            </div>
+                        <div class="">
+                <input type="checkbox" id="register-agree2">
+                <label for="register-agree2">Wyrażam zgodę na otrzymywanie informacji zgodnie z treśćią zamieszczoną poniżej.</label>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="row align-items-center form-group ">
+        <div class="col">
+            Recaptcha
+        </div>
+        <div class="col">
+            <button type="submit" class="btn btn-danger btn-block">Załóż konto</button>
+        </div>
+    </div>
+    
+
+</form>

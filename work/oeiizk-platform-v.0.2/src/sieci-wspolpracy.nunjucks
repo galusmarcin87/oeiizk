@@ -1,0 +1,48 @@
+{% extends '_layouts/base.nunjucks' %}
+
+
+
+{% block content %}
+
+{%include "_partials/_banner.nunjucks" %}
+
+
+<section class="events-list list">
+  <div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>Sieci współpracy</h1>
+    </div>
+
+  </div>
+
+  <form action="" method="">
+    <div class="row mb-4">
+      <div class="col-md-10">
+        <div class="input-group mb-3">
+                  <input type="text" class="form-control" placeholder="Treść szukanej frazy" aria-label="Treść szukanej frazy" aria-describedby="button-addon2">
+                  <div class="input-group-append">
+                      <button class="btn btn-outline-secondary" type="button" id="button-addon2">SZUKAJ</button>
+                  </div>
+              </div>
+      </div>
+      <div class="col-md-2">
+          <select id="sort" name="sort" class="custom-select">
+            <option value="1" selected>Sortuj po nazwie A/Z</option>
+            <option value="2">Sortuj po nazwie Z/A</option>
+        </select>
+      </div>
+    </div>
+  </form>
+
+  <div class="row">
+  {% for i in range(0, 6) -%}
+    {%include "_partials/items/_sieci.nunjucks" %}     
+  {% endfor %} 
+  </div>
+
+  </div>
+
+</section>
+
+{% endblock %}

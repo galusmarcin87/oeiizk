@@ -1,0 +1,34 @@
+<form action="#" method="POST" class="contact-form form-light">
+    <div class="row form-group">
+        <div class="col-12">
+            
+            <input id="contact-email" name="contact-email" type="text" class="form-control" placeholder="Adres e-mail" >
+        </div>
+    </div>
+        <div class="row form-group">
+        <div class="col-12">
+            
+            <textarea id="contact-message" type="text" class="form-control" placeholder="Treść wiadomości"></textarea>
+        </div>
+    </div>
+    
+    <div class="row align-items-center form-group ">
+        <div class="col">
+            <div class="">
+                <input type="checkbox" id="contact-rodo">
+                <label for="contact-rodo"><strong>Akceptacja regulaminu oraz <a href="#">RODO</a></strong></label>
+            </div>
+        </div>
+        <div class="col text-right">
+            <button type="submit" class="btn btn-danger">Wyślij wiadomość</button>
+        </div>
+        
+    </div>
+    <h3>RODO</h3>
+
+            <p class="text-center">
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+</p>
+    
+    
+</form>

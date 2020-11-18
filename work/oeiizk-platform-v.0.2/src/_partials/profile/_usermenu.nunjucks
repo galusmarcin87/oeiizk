@@ -1,0 +1,58 @@
+<div class="border border-light usermenu">
+<h3 class="active">
+<a href="#">Moje dane</a></h3>
+        <ul class="nav flex-column">
+          <li class="active nav-item">
+            <a href="#" class="nav-link">
+              Podstawowe dane
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              Zatrudnienie
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              Zmiana hasła
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              Dodatkowe dane
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              Szkolenia
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              Preferencje szkoleniowe
+            </a>
+          </li>
+        </ul>
+
+
+
+        <h3 class="border-light border-top">Wiadomości do DOS</h3>
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              Napisz wiadomość
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              Odebrane
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              Wysłane
+            </a>
+          </li>
+        </ul>
+</div>
+

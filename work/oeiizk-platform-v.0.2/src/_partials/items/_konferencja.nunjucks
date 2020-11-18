@@ -1,0 +1,40 @@
+<div class="item">
+    <div class="item-inner">
+
+    <div class="main">
+
+    <div class="item-info">
+        <div class="info-title">
+            <h3>V Konferencja "Bezpieczeństwo informacyjne
+w szkole i placówce oświatowej"
+            </h3>
+        </div>
+
+        <div class="time">
+            <p class="hours">22.10.2018, godz. 10:00-15:00<br />
+ul. Kołosińska 12, Płock</p>
+        </div>
+    </div>
+
+    <div class="image">
+        <img src="images/szkolenie1.jpg" class="image-fluid" alt="">
+    </div>
+
+    <div class="description">
+        <p>Ośrodek Edukacji Informatycznej i Zastosowań Komputerów w Warszawie serdecznie zaprasza dyrektorów, nauczycieli szkół, przedszkoli, placówek oświatowych oraz...<p>
+        <p class="point">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+
+    <div class="more">
+        <div class="more-wrap">
+            <div class="text">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+            <div class="link">
+                <a href="#" class="btn btn-outline-primary">Szczegóły</a>
+            </div>
+        </div>
+    </div>
+</div>
+    </div>
+</div>

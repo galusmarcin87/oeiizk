@@ -1,0 +1,91 @@
+{% extends '_layouts/base.nunjucks' %}
+
+
+{% set loggedin = "1" %}
+{% set specialaccount = "1" %}
+
+
+{% block content %}
+
+<section class="profile">
+  <div class="container">
+  <div class="row header">
+    <div class="col-12 col-lg order-3 order-lg-1 mt-4 mt-lg-0">
+      <h1>Twoje konto <span class="font-weight-normal">| konto specjalne |</span></h1>
+    </div>
+    <div class="col-12 col-lg text-right order-2 order-lg-2">
+      Ostatnie logowanie: <strong>12.12.2018 / 15:01 / Warszawa</strong>
+    </div>
+    <div class="col-12 col-lg text-right order-1 order-lg-3">
+      Ostatnie błędne logowanie: <strong>01.12.2018 / 23:56 / Płock</strong>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-3">
+
+
+      {%include '_partials/profile/_specialmenu.nunjucks' %}
+
+    </div>
+    <div class="col-lg-9">
+
+      <ul class="nav szkolenia-year">
+        <li class="nav-link active">
+          <a class="nav-item" href="#">2018/2019</a>
+        </li>
+        <li class="nav-link">
+          <a class="nav-item" href="#">2017/2018</a>
+        </li>
+        <li class="nav-link">
+          <a class="nav-item" href="#">2016/2017</a>
+        </li>
+      </ul>
+      <div class="szkolenia-list list profil-szkolenia">
+        
+        <div class="row">
+          <div class="col">
+            <h3>Nadchodzące szkolenia</h3>
+          </div>
+        </div>
+
+        <div class="row">
+        {% for i in range(0, 1) -%}
+          {%include "_partials/items/_szkolenie-profil.nunjucks" %}     
+        {% endfor %}
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <h3>Aktualne szkolenia</h3>
+          </div>
+        </div>
+
+        <div class="row">
+        {% for i in range(0, 1) -%}
+          {%include "_partials/items/_szkolenie-profil.nunjucks" %}     
+        {% endfor %}
+        </div>
+
+          <div class="row">
+          <div class="col">
+            <h3>Zakończone szkolenia</h3>
+          </div>
+        </div>
+
+        <div class="row">
+        {% for i in range(0, 1) -%}
+          {%include "_partials/items/_szkolenie-profil.nunjucks" %}     
+        {% endfor %}
+        </div>
+
+        </div>
+
+      </div>
+    </div>
+  
+  </div>
+</section>
+
+{% endblock %}
+ 

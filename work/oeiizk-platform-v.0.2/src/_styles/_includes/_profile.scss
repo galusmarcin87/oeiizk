@@ -1,0 +1,184 @@
+section.profile {
+    .header {
+        font-size: rem-calc(14);
+        color: $blue;
+    }
+    form {
+        @include media-breakpoint-up(lg) {
+            .invalid-feedback {
+                position: absolute;
+                top: 50%;
+                left: 100%;
+                margin-left: 15px;
+                width:40%;
+            }
+            .date {
+                .invalid-feedback {
+                    margin-left: 30px;
+                    top:20%;
+                }
+            }
+        }
+    }
+}
+.has-toggle-password {
+    position: relative;
+    .toggle-password {
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        display: block;
+        transform:translateY(-50%);
+        cursor: pointer;
+        color: #8d88a2;
+    }
+}
+.usermenu {
+    margin-bottom: 20px;
+    h3 {
+        padding: 15px;
+        margin-bottom: 0;
+        a {
+            text-decoration: none;
+        }
+        &.active {
+            color:$red;
+            a {
+                color:$red;
+            }
+        }
+    }
+    ul {
+        margin-bottom: 15px;
+        li a {
+            &:before {
+                content: '- '
+            }
+        }
+        li.active a {
+            color:$red;
+        }
+    }
+}
+
+.specialmenu {
+    margin-bottom: 20px;
+
+    ul {
+        li {
+            border-top:1px solid $light;
+            font-weight: bold;
+            padding-top: 12px;
+            padding-bottom: 12px;
+            &:first-child {
+                border-top: 0;
+            }
+        }
+        li.active a {
+            color:$red;
+        }
+    }
+}
+
+.newsletter-history {
+    @include make-col-ready();
+    @include make-col(6);
+    @include media-breakpoint-up(sm) {
+        @include make-col(3);
+    }
+    @include media-breakpoint-up(md) {
+        @include make-col(2);
+    }
+    @include media-breakpoint-up(lg) {
+        @include make-col(2);
+    }
+    @include media-breakpoint-up(xl) {
+        @include make-col(1.2);
+    }
+    text-align: center;
+    margin-bottom: 8px;
+    
+    a {
+        display: block;
+        font-size: rem-calc(14);
+        // position: relative;
+        &:after {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 1px;
+            height: 100%;
+            background: $blue;
+            content: ' ';
+            display: block;
+            
+        }
+    }
+}
+
+.newsletter-search-form {
+    .btn {
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+}
+
+.preferences-form {
+    .preference {
+        background: #f3f3f6;
+        padding: 20px;
+    }
+    input[type="checkbox"] + label::before, input[type="radio"] + label::before {
+        background: #ffffff;
+    }
+    input[type="checkbox"] + label, input[type="radio"] + label {
+        font-size: rem-calc(18);
+        font-weight: bold;
+        color: #a6a3b5;
+        margin-bottom: 0;
+    }
+    input[type="checkbox"]:checked + label {
+        color: $blue;
+
+    }
+}
+
+.custom-file-input ~ .custom-file-label::after {
+    content: '...' !important;
+}
+
+.szkolenia-year {
+    margin-bottom: 30px;
+    li {
+        background: #9a95af;
+        + li {
+            margin-left: 20px;
+        }
+
+        a {
+            color: #ffffff;
+
+        }
+        &.active {
+            background: $blue;
+        }
+    }
+}
+
+.profile-progress {
+    color: $red;
+    font-size: rem-calc(14);
+    font-weight: 800;
+    width: 120px;
+    display: flex;
+    align-items: center;
+    .progress {
+        flex-grow:1;
+        margin-left: 15px;
+        height: 6px;
+        background: $primary;
+        .progress-bar {
+            background: $red;
+        }
+    }
+}

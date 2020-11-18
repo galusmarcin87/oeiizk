@@ -1,0 +1,37 @@
+<form action="#" method="POST" class="login-form form-light">
+    <div class="row form-group">
+        <div class="col-12 col-sm">
+            <label for="login-name">Nazwa użytkownika / e-mail</label>
+            <input id="login-name" type="text" class="form-control" >
+        </div>
+        <div class="col-12 col-sm">
+            <label for="login-pass">Hasło</label>
+            <input id="login-pass" type="password" class="form-control" >
+        </div>
+    </div>
+    <div class="border-bottom border-primary-light">
+    <div class="row align-items-center form-group ">
+        <div class="col-12 col-sm">
+            <div class="">
+                <input type="checkbox" id="login-remember">
+                <label for="login-remember">Zapamiętaj mnie</label>
+            </div>
+        </div>
+        <div class="col-12 col-sm">
+            <button type="submit" class="btn btn-danger btn-block">Zaloguj się</button>
+        </div>
+    </div>
+    </div>
+
+    <div class="row align-items-center pt-3">
+        <div class="col-12 col-sm">
+            <div class="">
+                <a href="../register.html" class="">Załóż nowe konto</a>
+            </div>
+        </div>
+        <div class="col-12 col-sm">
+                <a href="#" class="">Zapomniałeś hasła?</a>            
+        </div>
+    </div>
+    
+</form>

@@ -1,0 +1,49 @@
+{% extends '_layouts/base.nunjucks' %}
+
+
+
+{% block content %}
+
+{%include "_partials/_banner.nunjucks" %}
+
+<section class="bg-gray">
+  <div class="container">
+    <div class="row">
+    <div class="col-lg-7 order-2 order-lg-1 mt-3 mt-lg-0">
+      {%include "_partials/filters/_checkboxes.nunjucks" %}
+    </div>
+    <div class="col-lg-5 order-1 order-lg-2">
+      <div class="bg-white px-3 py-4">
+        <h3 class="border-bottom border-primary-light pb-3 mb-3">Zaloguj się</h3>
+        {%include "_partials/forms/_login.nunjucks" %}      
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<section class="szkolenia-list switching-list grid">
+  <div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>Lista szkoleń</h1>
+    </div>
+    <div class="col text-right">
+      <div class="listing-switcher">
+      <a href="#" class="list-grid active"><i class="fa fa-th"></i></a>
+      <a href="#" class="list-rows"><i class="fa fa-bars"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+  {% for i in range(0, 6) -%}
+    {%include "_partials/items/_szkolenie.nunjucks" %}     
+  {% endfor %}
+  </div>
+
+  </div>
+
+</section>
+
+{% endblock %}

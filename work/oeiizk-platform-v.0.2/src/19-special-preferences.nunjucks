@@ -1,0 +1,87 @@
+{% extends '_layouts/base.nunjucks' %}
+
+
+{% set loggedin = "1" %}
+{% set specialaccount = "1" %}
+
+{% block content %}
+
+<section class="profile">
+  <div class="container">
+  <div class="row header">
+    <div class="col-12 col-lg order-3 order-lg-1 mt-4 mt-lg-0">
+      <h1>Twoje konto <span class="font-weight-normal">| konto specjalne |</span></h1>
+    </div>
+    <div class="col-12 col-lg text-right order-2 order-lg-2">
+      Ostatnie logowanie: <strong>12.12.2018 / 15:01 / Warszawa</strong>
+    </div>
+    <div class="col-12 col-lg text-right order-1 order-lg-3">
+      Ostatnie błędne logowanie: <strong>01.12.2018 / 23:56 / Płock</strong>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-3">
+
+
+      {%include '_partials/profile/_specialmenu.nunjucks' %}
+
+    </div>
+    <div class="col-lg-9">
+
+        <form action="#" method="POST" class="preferences-form form-light">
+            <div class="row form-group ">
+                <div class="col-12 ">
+                    <div class="preference">
+                        <input type="checkbox" id="pref1">
+                        <label for="pref1">Aplikacje przyrodnicze w chmurze.</label>
+                    </div>
+
+                </div>
+            </div>
+            <div class="row form-group ">
+                <div class="col-12 ">
+                    <div class="preference">
+                        <input type="checkbox" id="pref2">
+                        <label for="pref2">Szkolenia obsługi systemu CRM</label>
+                    </div>
+
+                </div>
+            </div>
+            <div class="row form-group ">
+                <div class="col-12 ">
+                    <div class="preference">
+                        <input type="checkbox" id="pref4">
+                        <label for="pref4">Aplikacje przyrodnicze w chmurze.</label>
+                    </div>
+
+                </div>
+            </div>
+            <div class="row form-group ">
+                <div class="col-12 ">
+                    <div class="preference"> 
+                        <input type="checkbox" id="pref3">
+                        <label for="pref3">Szkolenia obsługi systemu CRM i jego możliwości w firmie</label>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="row align-items-center form-group ">
+                <div class="col-6">
+                    
+                </div>
+                <div class="col-6 text-right">
+                    <button type="submit" class="btn btn-danger px-5">Aktualizuj dane</button>
+                </div>
+            </div>
+        </form>
+
+      </div>
+    </div>
+  
+  </div>
+</section>
+
+{% endblock %}
+ 

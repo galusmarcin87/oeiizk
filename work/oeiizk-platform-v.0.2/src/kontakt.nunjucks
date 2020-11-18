@@ -1,0 +1,28 @@
+{% extends '_layouts/base.nunjucks' %}
+
+
+
+{% block content %}
+
+{%include "_partials/_banner.nunjucks" %}
+
+<div class="container">
+    <article class="main">
+        <div class="text-block">
+            <h3>Telefonicznie</h3>
+            <p class="text-center">
+Telefonicznie można kontaktować się z Działem Organizacji Szkoleń:<br/>
+<br />
+<strong>22 579 41 22</strong>   |  <strong> 22 579 41 80</strong>
+            </p>
+            <h3>Formularz zapytania do Działu Organizacji Szkoleń</h3>
+
+            {%include "_partials/forms/_contact.nunjucks" %}
+
+            
+
+        </div>
+    </article>
+</div>
+
+{% endblock %}

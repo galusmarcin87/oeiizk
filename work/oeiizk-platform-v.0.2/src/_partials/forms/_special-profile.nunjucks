@@ -1,0 +1,123 @@
+<form action="#" method="POST" class="profile-form form-light needs-validation" novalidate>
+
+{% set forms = [
+    {
+        name: 'name',
+        type: 'text',
+        label: 'Imię'
+    },
+    {
+        name: 'surname',
+        type: 'text',
+        label: 'Nazwisko'
+    },
+    {
+        name: 'login',
+        type: 'text',
+        label: 'Login'
+    },
+    {
+        name: 'email',
+        type: 'email',
+        label: 'Adres e-mail'
+    },
+        {
+        name: 'password',
+        type: 'password',
+        label: 'Hasło'
+    },
+        {
+        name: 'repeat_password',
+        type: 'password',
+        label: 'Powtórz hasło'
+    },
+    {
+        name: 'gender',
+        type: 'select',
+        label: 'Płeć'
+    },
+    {
+        name: 'birthdate',
+        type: 'date',
+        label: 'Data urodzenia'
+    },
+    {
+        name: 'place_of_birth',
+        type: 'text',
+        label: 'Miejsce urodzenia'
+    }] %}
+    {% for item in forms %}
+
+    <div class="row form-group">
+        <div class="col-12">
+            {%if item.type=="select" %}
+                <label for="register-{{item.name}}">{{item.label}}</label>
+                  <select id="register-{{item.name}}" name="register-{{item.name}}" class="custom-select" required>
+                    <option value="">-wybierz płeć-</option>
+                    <option value="m">Mężczyzna</option>
+                    <option value="f">Kobieta</option>
+                </select>
+                <div class="invalid-feedback">Uzupełnij dane</div>
+            {% elif item.type=="date" %}
+            <label for="register-{{item.name}}">{{item.label}}</label>
+            <div class="input-group date" id="datetimepicker8" data-target-input="nearest">
+                <input id="register-{{item.name}}" type="{{item.type}}" class="form-control" required>
+                
+                <div class="input-group-append" data-target="#datetimepicker8" data-toggle="datetimepicker">
+                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                </div>
+            <div class="invalid-feedback">Uzupełnij dane</div>
+            </div>
+            {% elif item.type=="password" %}
+              <label for="register-{{item.name}}">{{item.label}} *</label>
+              <div class="has-toggle-password">
+              <input id="register-{{item.name}}" type="password" name="register-{{item.name}}" class="form-control" required>
+              <span data-password-toggle="#register-{{item.name}}" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+              </div>
+            {% else %}
+            <label for="register-{{item.name}}">{{item.label}}</label>
+            <input id="register-{{item.name}}" type="{{item.type}}" class="form-control" required>
+            <div class="invalid-feedback">Uzupełnij dane</div>
+            {% endif %}
+
+        </div>
+    </div>
+
+
+    {%endfor %}
+
+
+    
+    <div class="row align-items-center form-group ">
+        <div class="col-6">
+            Recaptcha
+        </div>
+        <div class="col-6">
+            <button type="submit" class="btn btn-danger btn-block">Aktualizuj dane</button>
+        </div>
+    </div>
+
+    <script>
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.getElementsByClassName('needs-validation');
+    
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+        form.classList.add('was-validated');
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();
+</script>
+
+</form>

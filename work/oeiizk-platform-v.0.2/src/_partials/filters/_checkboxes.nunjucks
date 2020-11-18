@@ -1,0 +1,145 @@
+<h3>Filtruj listę szkoleń</h3>
+<form action="#" method="POST">
+    <div class="row mb-3">
+        <div class="col">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Treść szukanej frazy" aria-label="Treść szukanej frazy" aria-describedby="button-addon2">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="button" id="button-addon2">SZUKAJ</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% set forms = [
+    {
+        name: 'szkolenie',
+        label: 'Szkolenie'
+    },
+    {
+        name: 'konferencja',
+        label: 'Konferencja'
+    },
+    {
+        name: 'siec',
+        label: 'Sieć współpracy'
+    },
+    {
+        name: 'seminarium',
+        label: 'Seminarium'
+    },
+    {
+        name: 'webinarium',
+        label: 'Webinarium'
+    }] %}
+
+
+  <div class="row form-group checkboxes">
+    <div class="col-12 col-lg-2">
+      <p>Forma szkolenia:</p> 
+    </div>
+    {% for item in forms %}
+    <div class="col-12 col-sm-4 col-md-4 col-lg-2">
+        <input type="checkbox" id="forma-{{item.name}}">
+        <label for="forma-{{item.name}}">{{item.label}}</label>
+    </div>
+    {% endfor %}
+</div>
+{% set groups = [
+    {
+        name: 'polski',
+        label: 'Polski'
+    },
+    {
+        name: 'matematyka',
+        label: 'Matematyka'
+    },
+    {
+        name: 'informatyka',
+        label: 'Informatyka'
+    },
+    {
+        name: 'fizyka',
+        label: 'Fizyka'
+    }] %}
+
+<div class="row form-group checkboxes">
+      
+    <div class="col-12 col-lg-2">
+      <p>Grupa przedmiotów:</p>
+    </div>
+    {% for item in groups %}
+    <div class="col-12 col-sm-4 col-md-4 col-lg-2">
+        <input type="checkbox" id="forma-{{item.name}}">
+        <label for="forma-{{item.name}}">{{item.label}}</label>
+    </div>
+    {% endfor %}
+</div>
+
+{% set levels = [
+    {
+        name: 'przedszkolny',
+        label: 'Przedszkolny'
+    },
+    {
+        name: '1-3',
+        label: '1-3'
+    },
+    {
+        name: '4-6',
+        label: '4-6'
+    },
+    {
+        name: '7-8',
+        label: '7-8'
+    },
+    {
+        name: 'ponadpodstawowy',
+        label: 'Ponadpodstawowy'
+    }] %}
+
+<div class="row form-group checkboxes">
+      
+    <div class="col-12 col-lg-2">
+      <p>Poziom edukacyjny:</p>
+    </div>
+    {% for item in levels %}
+    <div class="col-12 col-sm-4 col-md-4 col-lg-2">
+        <input type="checkbox" id="forma-{{item.name}}">
+        <label for="forma-{{item.name}}">{{item.label}}</label>
+    </div>
+    {% endfor %}
+</div>
+
+
+{% set delegatures = [
+    {
+        name: 'warszawa',
+        label: 'Warszawa'
+    },
+    {
+        name: 'plock',
+        label: 'Płock'
+    },
+    {
+        name: 'krakow',
+        label: 'Kraków'
+    },
+    {
+        name: 'gdansk',
+        label: 'Gdańsk'
+    }] %}
+
+<div class="row form-group checkboxes">
+      
+    <div class="col-12 col-lg-2">
+      <p>Delegatura:</p>
+    </div>
+    {% for item in delegatures %}
+    <div class="col-12 col-sm-4 col-md-4 col-lg-2">
+        <input type="checkbox" id="forma-{{item.name}}">
+        <label for="forma-{{item.name}}">{{item.label}}</label>
+    </div>
+    {% endfor %}
+</div>
+</form>

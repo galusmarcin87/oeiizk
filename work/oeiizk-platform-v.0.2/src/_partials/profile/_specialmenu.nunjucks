@@ -1,0 +1,17 @@
+<div class="border border-light specialmenu">
+<ul class="nav flex-column">
+    <li class="nav-link active">
+        <a href="#" class="nav-item">Moje dane</a>
+    </li>
+    <li class="nav-link">
+        <a href="#" class="nav-item">Moje szkolenia</a>
+    </li>
+    <li class="nav-link">
+        <a href="#" class="nav-item">Moje preferencje</a>
+    </li>
+    <li class="nav-link">
+        <a href="#" class="nav-item">Wiarygodność</a>
+    </li>
+</ul>
+</div>
+

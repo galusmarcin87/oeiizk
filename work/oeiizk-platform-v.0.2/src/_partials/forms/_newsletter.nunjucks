@@ -1,0 +1,18 @@
+<form action="#" method="POST" class="newsletter-form form-light">
+    <div class="row form-group">
+        <div class="col-12">
+            
+            <input id="newsletter-email" name="newsletter-email" type="text" class="form-control" placeholder="Proszę podać swój adres e-mail" >
+        </div>
+    </div>
+    
+    <div class="row align-items-center form-group ">
+
+        <div class="col text-right">
+            <button type="submit" class="btn btn-danger">Prenumeruję newsletter</button>
+        </div>
+        
+    </div>
+
+    
+</form>

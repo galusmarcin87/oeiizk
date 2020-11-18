@@ -1,0 +1,69 @@
+{% extends '_layouts/base.nunjucks' %}
+
+
+{% set loggedin = "1" %}
+
+{% block content %}
+
+<section class="profile">
+  <div class="container">
+  <div class="row header">
+    <div class="col-12 col-lg order-3 order-lg-1 mt-4 mt-lg-0">
+      <h1>Twoje konto</h1>
+    </div>
+    <div class="col-12 col-lg text-right order-2 order-lg-2">
+      Ostatnie logowanie: <strong>12.12.2018 / 15:01 / Warszawa</strong>
+    </div>
+    <div class="col-12 col-lg text-right order-1 order-lg-3">
+      Ostatnie błędne logowanie: <strong>01.12.2018 / 23:56 / Płock</strong>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-3">
+      
+        
+        {%include '_partials/profile/_usermenu.nunjucks' %}
+
+    </div>
+    <div class="col-lg-9">
+    <div class="row no-gutters">
+{% macro zeroCheck(num=0) -%}
+    {{ '0'+num if num < 10 else num }}
+{%- endmacro %}
+
+{% macro checkDefault(num=0, rand=1) -%}
+    {{ num if num else range(1, rand) | random }} 
+{%- endmacro %}
+{% macro randDate(day='', month='', year='2018') -%}
+    {{ zeroCheck(checkDefault(day, 28)) }}-{{ zeroCheck(checkDefault(month, 12)) }}-{{ zeroCheck(checkDefault(year, 2019)) }}
+{%- endmacro %}
+
+            
+            {% for i in range(0, 100) -%}
+                <div class="newsletter-history">
+                    <a href="#" class="newsletter-link">{{randDate()}}</a>
+                </div>
+            {%- endfor %}
+        
+    </div>
+
+    <form action="#" method="POST" class="newsletter-search-form form-light mt-3">
+    <div class="row form-group">
+        <div class="col-12"> 
+            <input id="search" name="search" type="text" class="form-control" placeholder="Wyszukaj" >
+        </div>
+    </div>
+    <div class="row align-items-center form-group ">
+        <div class="col-12 text-right">
+            <button type="submit" class="btn btn-danger">Szukaj</button>
+        </div>      
+    </div>
+</form>
+    
+    </div>
+  </div>
+  </div>
+</section>
+
+{% endblock %}
