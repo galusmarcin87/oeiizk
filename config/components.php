@@ -10,6 +10,7 @@ $arr = [
     'user' => [
         'identityClass' => 'app\models\mgcms\db\User',
         'enableAutoLogin' => true,
+        'authTimeout' => 600,
     ],
     'errorHandler' => [
         'errorAction' => 'site/error',
@@ -69,9 +70,9 @@ $arr = [
         ],
     ],
     'assetsAutoCompress' =>
-    [
-        'class' => '\skeeks\yii2\assetsAuto\AssetsAutoCompressComponent',
-    ],
+        [
+            'class' => '\skeeks\yii2\assetsAuto\AssetsAutoCompressComponent',
+        ],
     'assetsAutoCompress' => require __DIR__ . '/inc/assetsAutoCompress.php',
     'i18n' => [
         'class' => Zelenin\yii\modules\I18n\components\I18N::className(),
@@ -104,9 +105,12 @@ $arr = [
         ],
         'db' => 'db',
     ],
-    'globalVariable' => array(
+    'globalVariable' => [
         'class' => 'app\components\GlobalVariable',
-    ),
+    ],
+    'session' => [
+        'timeout' => 10,
+    ],
 ];
 
 return $arr;
