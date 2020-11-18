@@ -90,6 +90,7 @@ class RegisterParticipant extends Model
       $user->last_name = $this->last_name;
       $user->email = $this->email;
       $user->role = User::ROLE_USER;
+      $user->gender = User::GENDER_FEMALE;
       $user->status = User::STATUS_TEMPORARY_USER;
       $user->phone = $this->phone;
       $saved = $user->save();
