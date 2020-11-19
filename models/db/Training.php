@@ -160,7 +160,7 @@ class Training extends \app\models\mgcms\db\AbstractRecord
         [['meeting_number'], 'validateMeetingNumber'],
         [['module_number'], 'validateModulesNumber'],
         [['maximal_participants_number'], 'compare', 'compareValue' => 0, 'operator' => '>'],
-        [['code'], 'unique'],
+        //[['code'], 'unique'],
     ];
   }
 
@@ -249,6 +249,16 @@ class Training extends \app\models\mgcms\db\AbstractRecord
             $this->addError('date_end', "Data do zajęć $lesson jest późniejsza niż data od szkolenia");
           }
         }
+
+          foreach ($this->trainingModules as $module) {
+              if (strtotime($this->date_start) > strtotime($module->date_start)) {
+                  $this->addError($attribute, "Data od zajęć $module jest wcześniejsza niż data od szkolenia");
+              }
+
+              if (strtotime($this->date_end . ' 23:59:59') < strtotime($module->date_end)) {
+                  $this->addError('date_end', "Data do zajęć $module jest późniejsza niż data od szkolenia");
+              }
+          }
       }
     }
   }
