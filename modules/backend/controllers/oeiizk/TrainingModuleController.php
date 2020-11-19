@@ -92,7 +92,8 @@ class TrainingModuleController extends MgBackendController
         }
 
         if ($model->loadAll(Yii::$app->request->post()) && $model->saveAll()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            MgHelpers::setFlashSuccess("Zapisano");
+            return $this->redirect(['update', 'id' => $model->id]);
         } else {
             return $this->render('update', [
                 'model' => $model,

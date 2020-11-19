@@ -155,7 +155,8 @@ class TrainingController extends MgBackendController
     if ($model->loadAll(Yii::$app->request->post()) && $model->saveAll(['lectorsStr', 'participants', 'lectors'])) {
       $this->savePresences($model);
       $this->saveParticipantCheckboxes($model);
-      return $this->redirect(['view', 'id' => $model->id]);
+        MgHelpers::setFlashSuccess('Zapisano');
+      return $this->redirect(['update', 'id' => $model->id]);
     } else {
       return $this->render('update', [
               'model' => $model,

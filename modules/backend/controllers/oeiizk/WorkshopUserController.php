@@ -90,7 +90,8 @@ class WorkshopUserController extends MgCmsController
         }
 
         if ($model->loadAll(Yii::$app->request->post()) && $model->saveAll()) {
-            return $this->redirect(['view', 'user_id' => $model->user_id, 'workshop_id' => $model->workshop_id]);
+            MgHelpers::setFlashSuccess("Zapisano");
+            return $this->redirect(['update', 'user_id' => $model->user_id, 'workshop_id' => $model->workshop_id]);
         } else {
             return $this->render('update', [
                 'model' => $model,
