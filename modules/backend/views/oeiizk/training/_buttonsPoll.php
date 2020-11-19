@@ -8,6 +8,12 @@ use \app\components\mgcms\MgHelpers;
 
 
   <div class="row">
+
+
+  <?= $form->field6md($model, 'poll_from')->datePicker() ?>
+
+  <?= $form->field6md($model, 'poll_to')->datePicker() ?>
+
   <?=
   $form->field6md($model, 'poll_id')->widget(\kartik\widgets\Select2::classname(),
       [
@@ -16,13 +22,9 @@ use \app\components\mgcms\MgHelpers;
           'pluginOptions' => [
               'allowClear' => true
           ],
-  ]);
+      ]);
 
   ?>
-
-  <?= $form->field6md($model, 'poll_from')->datePicker() ?>
-
-  <?= $form->field6md($model, 'poll_to')->datePicker() ?>
 
   </div>
 
