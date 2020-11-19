@@ -112,7 +112,7 @@ class TrainingSearch extends Training
             ->andFilterWhere(['like', 'visibility', $this->visibility])
             ->andFilterWhere(['like', 'certificate_lines', $this->certificate_lines])
             ->andFilterWhere(['like', 'is_login_required', $this->is_login_required])
-            ->andFilterWhere(['like', 'status', $this->status])
+            ->andFilterWhere(['like', 'training.status', $this->status])
             ->andFilterWhere(['like', 'is_card_required', $this->is_card_required])
             ->andFilterWhere(['like', 'is_certificate_issued', $this->is_certificate_issued])
             ->andFilterWhere(['like', 'additional_information', $this->additional_information])
