@@ -348,15 +348,29 @@ class SiteController extends \app\components\mgcms\MgCmsController
   public function actionActivate($hash)
   {
 
-    $id = MgHelpers::decrypt($hash);
-    if (!$id) {
-      $this->throw404();
-    }
+      $decrypted = MgHelpers::decrypt($hash);
+      $decryptedArr = explode('-', $decrypted);
+      if (sizeof($decryptedArr) != 2) {
+          $this->throw404();
+      }
 
-    $user = User::findOne($id);
-    if (!$user) {
-      $this->throw404();
-    }
+      $id = $decryptedArr[0];
+      $expirationDate = $decryptedArr[1];
+
+      if (!$id) {
+          $this->throw404();
+      }
+
+      if ($expirationDate < strtotime('now')) {
+          MgHelpers::setFlashError('Link aktywacyjny wygasł');
+          $this->throw404();
+      }
+
+      $user = User::findOne($id);
+      if (!$user) {
+          $this->throw404();
+      }
+
 
     $user->status = User::STATUS_ACTIVE;
     $user->date_email_confirmation = date('Y-m-d H:i:s');

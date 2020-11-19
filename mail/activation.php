@@ -11,7 +11,7 @@ Witamy na Platformie Obsługi Szkoleń Ośrodka Edukacji Informatycznej i Zastos
 <p>Prosimy o aktywację konta <a href="<?=
   yii\helpers\Url::to([
       '/site/activate',
-      'hash' => app\components\mgcms\MgHelpers::encrypt($model->id)
+      'hash' => app\components\mgcms\MgHelpers::encrypt($model->id.'-'.strtotime('now +1day'))
       ], true)
 
   ?>"><?= Yii::t('app', 'Click here'); ?></a>.</p>
