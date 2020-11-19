@@ -12,6 +12,7 @@ use yii\helpers\Html;
       'postcode',
       'post',
       'street',
+      'house_no',
       [
           'class' => yii\grid\ActionColumn::className(),
           'template' => '{choose}',
