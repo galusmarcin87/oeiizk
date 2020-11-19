@@ -778,6 +778,7 @@ class User extends \app\models\mgcms\db\AbstractRecord implements IdentityInterf
 
   public function checkAccess($controller, $action)
   {
+      set_time_limit ( 300);
     $controller = str_replace(['mgcms/', 'oeiizk/'], '', $controller);
     $roles = $this->roles;
 
