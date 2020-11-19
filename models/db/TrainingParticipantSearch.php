@@ -18,6 +18,7 @@ class TrainingParticipantSearch extends TrainingParticipant
     public $userFirstName;
     public $userEmail;
     public $userWorkplaceCode;
+    public $trainingCode;
     public $trainingCreatedById;
 
     /**
@@ -27,7 +28,7 @@ class TrainingParticipantSearch extends TrainingParticipant
     {
         return [
             [['id', 'training_id', 'user_id', 'order', 'created_by'], 'integer'],
-            [['surname', 'workplace', 'status', 'created_on', 'is_reserve', 'is_paid', 'is_passed', 'is_print_certificate', 'userLastName', 'userFirstName', 'userEmail', 'userWorkplaceCode', 'trainingCreatedById'], 'safe'],
+            [['surname', 'workplace', 'status', 'created_on', 'is_reserve', 'is_paid', 'is_passed', 'is_print_certificate', 'userLastName', 'userFirstName', 'userEmail', 'userWorkplaceCode', 'trainingCreatedById','trainingCode'], 'safe'],
             [['paid_missing'], 'number'],
         ];
     }
@@ -93,7 +94,13 @@ class TrainingParticipantSearch extends TrainingParticipant
             ->andFilterWhere(['like', 'user.email', $this->userEmail]);
 
 
+
         $query->joinWith('user');
+
+        if($this->trainingCode){
+            $query->joinWith('training');
+            $query->andFilterWhere(['like', 'training.code', $this->trainingCode]);
+        }
 
 
         if ($this->trainingCreatedById) {

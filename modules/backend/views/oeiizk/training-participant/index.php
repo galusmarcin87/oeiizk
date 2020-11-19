@@ -49,6 +49,13 @@ $this->registerJs($search);
           'filterInputOptions' => ['placeholder' => Yii::t('app', 'Training'), 'id' => 'grid-training-participant-search-training_id'],
       ],
       [
+          'attribute' => 'trainingCode',
+          'label' => 'Kod',
+          'value' => function($model) {
+              return $model->training ? $model->training->code : '';
+          },
+      ],
+      [
           'attribute' => 'userLastName',
           'label' => 'Nazwisko',
           'value' => function($model) {
