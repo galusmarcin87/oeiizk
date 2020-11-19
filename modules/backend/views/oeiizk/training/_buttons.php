@@ -70,4 +70,13 @@ use \app\components\mgcms\MgHelpers;
       )
 
       ?>
+
+      <?=
+      Html::a( 'Link', ['/training/view', 'code' => $model->code], [
+              'class' => 'btn btn-success',
+              'target' => '_blank',
+          ]
+      )
+
+      ?>
     </div>
