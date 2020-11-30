@@ -117,6 +117,13 @@ use yii\widgets\DetailView;
             'visible' => !app\components\mgcms\OeiizkHelpers::isRole(app\models\mgcms\db\User::ROLE_DOS)
         ],
         [
+            'label' => '<i class="glyphicon glyphicon-book"></i> ' . Html::encode(Yii::t('app', 'Workshops')),
+            'content' => $this->render('_formWorkshop',
+                [
+                    'row' => \yii\helpers\ArrayHelper::toArray($model->workshops),
+                ]),
+        ],
+        [
             'label' => '<i class="glyphicon glyphicon-book"></i> ' . Html::encode(Yii::t('app', 'Kierunki polityki')),
             'content' => $this->render('_formTrainingTrainingDirection',
                 [
