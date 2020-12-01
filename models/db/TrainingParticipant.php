@@ -114,9 +114,15 @@ class TrainingParticipant extends \app\models\mgcms\db\AbstractRecord
     
     public function save($runValidaton = true, $attributes = null)
     {
+
       if($this->is_passed){
         $this->status = 'ukończenie szkolenia';
+      }else{
+          if($this->getOldAttribute('is_passed') == 1){
+              $this->status = 'brak zaliczenia';
+          }
       }
+
       $saved = parent::save($runValidaton, $attributes);
       return $saved;
     }

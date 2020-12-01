@@ -72,7 +72,7 @@
 
 <script type="text/javascript">
   function fillAllCheckboxes() {
-    $('#presenceList input[type=checkbox]:not(.is_passed)').each(function () {
+    $('#presenceList input[type=checkbox]').each(function () {
       $(this).prop('checked', true);
     })
   }
