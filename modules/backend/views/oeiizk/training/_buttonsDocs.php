@@ -52,8 +52,20 @@ use app\components\mgcms\yii\ActiveForm;
   ?>
 
   <br/><br/>
+    <?if($model->trainingTemplate->programFile):?>
+            <?=
+            Html::a('<i class="fa glyphicon glyphicon-file"></i> ' . Yii::t('app', 'Program szkolenia'), $model->trainingTemplate->programFile->linkUrl, [
+                    'class' => 'btn btn-success',
+                    'target' => '_blank',
+                ]
+            )
 
-  <?if (\app\components\mgcms\MgHelpers::getUserModel()->checkAccess('training', 'generate-certificate') 
+            ?>
+
+        <br/><br/>
+    <?endif?>
+
+  <?if (\app\components\mgcms\MgHelpers::getUserModel()->checkAccess('training', 'generate-certificate')
       && \app\components\mgcms\MgHelpers::getUserModel()->checkAccess('training', 'generate-certificate-all')):?>
   <div class="row">
     <div class="col-md-3">
