@@ -62,8 +62,10 @@ $model = new \app\models\db\Workplace;
               'type' => GridView::TYPE_DEFAULT,
               'before' => false,
               'footer' => false,
-              'after' => Html::button('<i class="glyphicon glyphicon-plus"></i>' . Yii::t('app', 'Add Workplace'), ['type' => 'button', 'class' => 'btn btn-success kv-batch-create', 'onClick' => 'addRowWorkplace()']) 
-             
+              'after' =>
+	              Html::button('<i class="glyphicon glyphicon-plus"></i>' . Yii::t('app', 'Add Workplace'), ['type' => 'button', 'class' => 'btn btn-success kv-batch-create', 'onClick' => 'addRowWorkplace()']) . ' ' .
+                  Html::a('<i class="glyphicon glyphicon-question-sign"></i>', \app\components\mgcms\MgHelpers::getSetting('url do artykułu z pomocą dotyczącą wyboru miejsca zatrudnienia'), ['title' => Yii::t('app', 'Help'), ])
+
           ]
       ]
   ]);

@@ -102,6 +102,9 @@ p.hours {
 .glyphicon-trash:before {
   content: "\e020";
 }
+.glyphicon-question-sign:before {
+  content: "\e085";
+}
 .pagination li a {
   padding: 5px 10px;
   background: #dee2e6;
