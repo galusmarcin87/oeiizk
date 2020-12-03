@@ -6,6 +6,7 @@ use Yii;
 use app\models\db\Training;
 use app\models\db\TrainingSearch;
 use app\modules\backend\components\mgcms\MgBackendController;
+use yii\helpers\Json;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use app\components\mgcms\MgHelpers;
@@ -777,7 +778,7 @@ class TrainingController extends MgBackendController
     }
   }
 
-  public function actionCalendar($lab_id = false)
+  public function actionCalendar($lab_id = false, $institution_id = false)
   {
     $a = Yii::$app->get('assetsAutoCompress');
     $a->cssFileCompile = false;
@@ -791,7 +792,7 @@ class TrainingController extends MgBackendController
     ]);
   }
 
-  public function actionJsoncalendar($start = NULL, $end = NULL, $_ = NULL, $lab_id = false)
+  public function actionJsoncalendar($start = NULL, $end = NULL, $_ = NULL, $lab_id = false, $institution_id = false)
   {
 
     \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
@@ -811,6 +812,11 @@ class TrainingController extends MgBackendController
     if ($lab_id) {
       $queryLessons->andFilterCompare('lab_id', $lab_id);
     }
+
+      if($institution_id){
+          $queryLessons->joinWith('lab');
+          $queryLessons->andFilterCompare('institution_id', $institution_id);
+      }
     /* @var $lessons \app\models\db\Lesson[] */
     $lessons = $queryLessons->all();
 
@@ -822,6 +828,13 @@ class TrainingController extends MgBackendController
         $Event->start = date('Y-m-d\TH:i:s\Z', strtotime($lesson->date_start));
         $Event->end = date('Y-m-d\TH:i:s\Z', strtotime($lesson->date_end));
         $Event->url = $lesson->link;
+          $Event->nonstandard = Json::encode([
+              'dateFrom' => $model->date_start,
+              'dateTo' => $model->date_end,
+              'code' => $model->training->code,
+              'lab' =>  ($model->lab ? $model->lab->shorterName : ''),
+              'lector'=>$model->training->lectorsStr,
+          ]);
 
         $events[] = $Event;
       }
@@ -841,15 +854,27 @@ class TrainingController extends MgBackendController
     if ($lab_id) {
       $queryEvents->andFilterCompare('lab_id', $lab_id);
     }
+
+    if($institution_id){
+        $queryEvents->joinWith('lab');
+        $queryEvents->andFilterCompare('institution_id', $institution_id);
+    }
     $eventModels = $queryEvents->all();
 
     foreach ($eventModels as $model) {
       $Event = new \yii2fullcalendar\models\Event();
       $Event->id = $model->id;
-      $Event->title = (string) $model . ', Sala: ' . ($model->lab ? $model->lab->shorterName : '');
+      $Event->title =  'Sala: ' . ($model->lab ? $model->lab->shorterName : '').', '.(string) $model;
       $Event->start = date('Y-m-d\TH:i:s\Z', strtotime($model->date_from));
       $Event->end = date('Y-m-d\TH:i:s\Z', strtotime($model->date_to));
       $Event->color = 'green';
+        $Event->nonstandard = Json::encode([
+            'dateFrom' => $model->date_from,
+            'dateTo' => $model->date_to,
+            'code' => $model->code,
+            'lab' =>  ($model->lab ? $model->lab->shorterName : ''),
+            'lector'=>(string)$model->createdBy,
+        ]);
       $Event->url = $model->link2;
       $events[] = $Event;
     }
@@ -867,6 +892,10 @@ class TrainingController extends MgBackendController
     if ($lab_id) {
       $queryWorkshops->andFilterCompare('lab_id', $lab_id);
     }
+      if($institution_id){
+          $queryWorkshops->joinWith('lab');
+          $queryWorkshops->andFilterCompare('institution_id', $institution_id);
+      }
     $workshopModels = $queryWorkshops->all();
     foreach ($workshopModels as $model) {
       $Event = new \yii2fullcalendar\models\Event();
@@ -876,6 +905,13 @@ class TrainingController extends MgBackendController
       $Event->end = date('Y-m-d\TH:i:s\Z', strtotime($model->date_end));
       $Event->color = 'purple';
       $Event->url = $model->link2;
+        $Event->nonstandard = Json::encode([
+            'dateFrom' => $model->date_start,
+            'dateTo' => $model->date_end,
+            'code' => $model->id,
+            'lab' =>  ($model->lab ? $model->lab->shorterName : ''),
+            'lector'=>(string)$model->createdBy,
+        ]);
       $events[] = $Event;
     }
     /* ----------------WORKSHOPS--------------- */
