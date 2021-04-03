@@ -122,7 +122,7 @@ $isFromMyAccount = isset($fromMyAccount) && $fromMyAccount;
                                             href="<?= Url::to(['/poll/view', 'hash' => MgHelpers::encrypt($model->id)]) ?>"
                                             class="btn btn-outline-primary">Ankieta</a></p>
                             <? endif ?>
-                            <? if ($model->is_certificate_issued && $model->certificate_template): ?>
+                            <? if ($model->is_certificate_issued && $model->certificate_template && $currentUserParticipant->is_passed): ?>
                                 <p class="text-center"><a
                                             href="<?= Url::to(['generate-certificate', 'hash' => MgHelpers::encrypt($model->id)]) ?>"
                                             class="btn btn-outline-primary" target="_blank">Zaświadczenie</a></p>
