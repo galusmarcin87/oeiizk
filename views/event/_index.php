@@ -42,7 +42,7 @@ use app\components\mgcms\MgHelpers;
       <div class="more-wrap">
         <div class="link text-center">
           <p>
-            <a href="<?= $model->link ?>" class="btn btn-outline-primary d-lg-block">Szczegóły</a>
+            <a href="<?= $model->link ?>" class="btn btn-outline-primary d-lg-block" title="Wydarzenie <?=$model->name?> - szczegóły">Szczegóły</a>
           </p>
           <p>
             <a href="<?= $model->link_to_registration ?>" class="btn btn-outline-primary d-lg-block">Rejestracja</a>

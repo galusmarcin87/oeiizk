@@ -45,7 +45,7 @@ $menu = new OeiizkMenu(['name' => 'main', 'loginLink' => false]);
                   </a>
                 </li>
                 <li>
-                  <a href="<?= Url::to(['newsletter']) ?>" data-toggle="tooltip" title="Newsletter">
+                  <a href="<?= Url::to(['newsletter']) ?>" data-toggle="tooltip" title="Newsletter" title="Formularz zapisu do Newslettera">
                     <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                          x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;"
                          xml:space="preserve">
@@ -128,7 +128,7 @@ $menu = new OeiizkMenu(['name' => 'main', 'loginLink' => false]);
                   </a>
                 </li>
                 <li>
-                  <a href="http://szkolenia.oeiizk.edu.pl/" data-toggle="tooltip" title="Moodle" target="_blank">
+                  <a href="http://szkolenia.oeiizk.edu.pl/" data-toggle="tooltip" title="Moodle" target="_blank" title="Platforma szkoleniowa ośrodka - Moodle (nowa zakładka)">
                     <svg xmlns="http://www.w3.org/2000/svg"
                          xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" style="height:32px;position:relative;top:-2px;" version="1.1">
                       <path d="M18 7l-8 1-6 4h1v10h1V12h2.012c-.11.07.226 2.2.308 2.195l4.446 1.067 3.25-3.672s-.297-1.23-.965-2.13zm4.5 4c-1.57 0-2.992.676-3.996 1.742A2.35 2.35 0 0 0 17 12l-2 2.281c1.23.367 2 1.25 2 2.219V24h3v-7.5c0-1.398 1.102-2.5 2.5-2.5s2.5 1.102 2.5 2.5V24h3v-7.5c0-3.02-2.48-5.5-5.5-5.5zM8.973 15.406C8.949 15.602 9 24 9 24h3l-.004-7.656z"
@@ -139,7 +139,7 @@ $menu = new OeiizkMenu(['name' => 'main', 'loginLink' => false]);
                   </a>
                 </li>
                 <li>
-                  <a href="http://www.facebook.com/oeiizk" data-toggle="tooltip" title="Facebook" target="_blank">
+                  <a href="http://www.facebook.com/oeiizk" data-toggle="tooltip" title="Facebook" target="_blank" title="Strona ośrodka na Facebooku (nowa zakładka)" >
                     <svg version="1.1" id="Capa_1b" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                          x="0px" y="0px" width="96.124px" height="96.123px" viewBox="0 0 96.124 96.123"
                          style="enable-background:new 0 0 96.124 96.123;" xml:space="preserve">
@@ -153,7 +153,7 @@ $menu = new OeiizkMenu(['name' => 'main', 'loginLink' => false]);
                   </a>
                 </li>
                 <li>
-                  <a href="http://www.youtube.com/OEIiZKwWarszawie" data-toggle="tooltip" title="Youtube" target="_blank">
+                  <a href="http://www.youtube.com/OEIiZKwWarszawie" data-toggle="tooltip" title="Youtube" target="_blank" title="Strona kanału ośrodka na Youtube (nowa zakładka)">
                     <svg version="1.1" id="Capa_1c" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                          x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;"
                          xml:space="preserve">
@@ -171,12 +171,12 @@ $menu = new OeiizkMenu(['name' => 'main', 'loginLink' => false]);
                   </a>
                 </li>
                 <li>
-                  <a href="https://www.oeiizk.waw.pl/sklepik/" target="_blank">
+                  <a href="https://www.oeiizk.waw.pl/sklepik/" target="_blank" title= "Przenosi do nowej zakładki">
                     Sklepik
                   </a>
                 </li>
                 <li>
-                  <a href="http://bip.oeiizk.waw.pl/" target="_blank">
+                  <a href="http://bip.oeiizk.waw.pl/" target="_blank" title="Strona Biuletynu Informacji Publicznej OEIiZK (nowa zakładka)">
                     <img src="/images/bip-logo.png" alt="BIP">
                   </a>
                 </li>
@@ -242,7 +242,7 @@ $menu = new OeiizkMenu(['name' => 'main', 'loginLink' => false]);
                   </a>
                 </li> */ ?>
                 <li>
-                  <a href="/art/pomoc" target="_blank">POMOC</a>
+                  <a href="/art/pomoc" target="_blank" title="Link do pomocy obsługi Platformy Obsługi Szkoleń (nowa zakładka) ">POMOC</a>
                 </li>
               </ul>
             </div>
@@ -266,13 +266,13 @@ $menu = new OeiizkMenu(['name' => 'main', 'loginLink' => false]);
         <div class="center-header">
           <div class="flex align-items-center">
             <div class="logo1 pr-1 pr-lg-4">
-              <a class="logo-wrapper" href="/">
+              <a class="logo-wrapper" href="/" title="Logo - Platformy Obsługi Szkoleń (POS - strona główna)">
                 <img id="logo" src="/images/logo.png" alt="Logo">
 
               </a>
             </div>
             <div class="logo2 px-1 px-lg-4 border-left border-light">
-              <a href="https://www.oeiizk.waw.pl" class="logo-wrapper" target="_blank">
+              <a href="https://www.oeiizk.waw.pl" class="logo-wrapper" target="_blank" title="Logo - napis OEIiZK (Ośrodek Edukacji Informatycznej i Zastosowań Komputerów w Warszawie), przenosi do nowej zakładki ze stroną ośrodka">
                 <img id="logo-oeiizk" src="/images/svg/logo_oeiizk.svg" alt="Logo">
               </a>
             </div>

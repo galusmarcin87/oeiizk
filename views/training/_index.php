@@ -99,8 +99,11 @@ $isFromMyAccount = isset($fromMyAccount) && $fromMyAccount;
                         </div>
                     <? endif ?>
                     <div class="link">
-                        <p class="text-center"><a href="<?= $model->url ?>"
-                                                  class="btn btn-outline-primary">Szczegóły</a></p>
+                        <p class="text-center">
+	                        <a href="<?= $model->url ?>"
+                                                  class="btn btn-outline-primary"
+                               title="Szkolenie <?=$model->name?> - szczegóły"
+	                        >Szczegóły</a></p>
                         <? if ($currentUserParticipant && $isFromMyAccount): ?>
                             <?
                             if (in_array($model->status,

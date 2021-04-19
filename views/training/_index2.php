@@ -76,7 +76,7 @@ if (!$template) {
         </div>
         <?endif?>
         <div class="link">
-          <a href="<?= $model->url ?>" class="btn btn-outline-primary">Szczegóły</a>
+          <a href="<?= $model->url ?>" class="btn btn-outline-primary" title="Szkolenie <?= $model->name?> - szczegóły">Szczegóły</a>
         </div>
       </div>
     </div>
