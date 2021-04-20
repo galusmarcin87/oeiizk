@@ -259,7 +259,7 @@ class TrainingSearch extends Training
             $query->joinWith('trainingTemplate');
             $query->andWhere(['NOT IN', 'training_template.type', $this->notTypes]);
         }
-        
+
         if ($this->notIdsIn) {
             $query->andWhere(['NOT IN', 'training.id', $this->notIdsIn]);
         }
@@ -355,10 +355,15 @@ class TrainingSearch extends Training
             $query->andWhere(['IN', 'training.training_template_id', $this->trainingTemplateIds]);
         }
 
-//        $query->orWhere(['training.is_promoted_pos' => 1, 'training.sign_status' => 0, 'training.is_deleted' => 0]);
+        $promotedCondition = ['and',['training.is_promoted_pos' => 1], ['training.sign_status' => 0], ['training.is_deleted' => 0]];
+        if ($this->notTypes) {
+            $query->joinWith('trainingTemplate');
+            $promotedCondition[] = ['NOT IN', 'training_template.type', $this->notTypes];
+        }
+        $query->orFilterWhere($promotedCondition);
         $query->limit = 20000000;
-        
-        
+
+
 
 
         $wholeQuery->select('*')->from(['a' => $query])->groupBy('training_template_id')->orderBy($query->orderBy);
