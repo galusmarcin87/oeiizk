@@ -40,6 +40,7 @@ class TrainingController extends \app\components\mgcms\MgCmsController
     if (!$model) {
       throw new \yii\web\HttpException(404, Yii::t('app', 'Not found'));
     }
+    $this->view->title = (string)$model . ' - POS';
     return $this->render('view', ['model' => $model]);
   }
 
@@ -99,7 +100,7 @@ class TrainingController extends \app\components\mgcms\MgCmsController
     if (!$model || !$model->isRegisteringAvailable()) {
       $this->throw404();
     }
-    
+
     if(sizeof($model->trainingParticipants) >= $model->final_maximal_participants_number ){
         MgHelpers::setFlashError('Przekroczona maksymalna liczba uczestników.');
         return $this->back();
@@ -123,7 +124,7 @@ class TrainingController extends \app\components\mgcms\MgCmsController
         }else{
           MgHelpers::setFlashInfo('Jesteś już zapisany na to szkolenie.');
         }
-        
+
         return $this->back();
       }
 

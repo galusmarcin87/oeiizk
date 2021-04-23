@@ -19,7 +19,7 @@ FrontAsset::register($this);
     <?= Html::csrfMetaTags() ?>
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <title>Platforma Obsługi Szkoleń - OEIiZK</title>
+    <title><?=$this->title?></title>
     <meta name="description" content="Platforma Obsługi Szkoleń"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
@@ -38,7 +38,7 @@ FrontAsset::register($this);
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-    
+
     <meta property="og:image" content="<?= \yii\helpers\Url::base(true)?>/favicon/apple-icon-180x180.png"/>
     <?php $this->head() ?>
   </head>
@@ -60,7 +60,7 @@ FrontAsset::register($this);
 
 
     <?php $this->endBody() ?>
-    
+
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
 	<script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js"></script>
 	<script>
