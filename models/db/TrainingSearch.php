@@ -360,6 +360,10 @@ class TrainingSearch extends Training
             $query->joinWith('trainingTemplate');
             $promotedCondition[] = ['NOT IN', 'training_template.type', $this->notTypes];
         }
+        if ($this->types) {
+            $query->joinWith('trainingTemplate');
+            $promotedCondition[] = ['IN', 'training_template.type', $this->types];
+        }
         $query->orFilterWhere($promotedCondition);
         $query->limit = 20000000;
 
