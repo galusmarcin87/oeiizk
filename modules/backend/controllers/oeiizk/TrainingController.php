@@ -117,7 +117,7 @@ class TrainingController extends MgBackendController
         try {
           $trainingLector->save();
         } catch (yii\db\IntegrityException $e) {
-          
+
         }
       }
 
@@ -277,7 +277,7 @@ class TrainingController extends MgBackendController
   }
 
   /**
-   * 
+   *
    * Export Training information into PDF format.
    * @param integer $id
    * @return mixed
@@ -370,8 +370,8 @@ class TrainingController extends MgBackendController
           padding: 3px;
           
         }',
-        'marginTop' => 10,
-        'marginBottom' => 10,
+        'marginTop' => 30,
+        'marginBottom' => 30,
         'options' => [
             'title' => \Yii::$app->name,
             'defaultheaderline' => 0, //for header

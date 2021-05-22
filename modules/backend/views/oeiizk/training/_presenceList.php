@@ -43,13 +43,6 @@ Prowadzący zajęcia: <?= $model->lectorsStr ?>
 
           ?>
           <? if (!$trainingParticipant->canByGenerated()) continue;?>
-          <? if ($index % 8 == 0 && $index != 0): ?>
-            </tbody></table>
-            <newpage/><br/><br/><br/><br/>
-            <table style="width: 100%;border: 1px solid black;border-collapse:collapse;" border="1"><tbody>
-                <?=$this->render('_presenceListTableHeader',['model'=>$model])?>
-
-          <? endif ?>
 
           <tr>
               <td><?= $index + 1 ?></td>
