@@ -10,7 +10,7 @@ $arr = [
     'user' => [
         'identityClass' => 'app\models\mgcms\db\User',
         'enableAutoLogin' => false,
-        'authTimeout' => 600,
+        'authTimeout' => 6000,
     ],
     'errorHandler' => [
         'errorAction' => 'site/error',

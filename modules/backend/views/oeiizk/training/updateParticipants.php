@@ -15,7 +15,7 @@ $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Trainings'), 'url' =
 $this->params['breadcrumbs'][] = ['label' => $model->name, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = Yii::t('app', 'Update');
 
-\mootensai\components\JsBlock::widget(['viewFile' => '_script', 'pos' => \yii\web\View::POS_END,
+\mootensai\components\JsBlock::widget(['viewFile' => '_scriptAddParticipant', 'pos' => \yii\web\View::POS_END,
     'viewParams' => [
         'class' => 'TrainingParticipant',
         'relID' => 'training-participant',
@@ -32,7 +32,7 @@ $userDataProvider = $userSearchModel->search(Yii::$app->request->queryParams);
 <div class="training-update">
 
   <h1><?= Html::encode($this->title) ?></h1>
-  
+
    <?=
   Html::a(Yii::t('app', 'Powrót do szkolenia'), ['update', 'id' => $model->id], [
       'class' => 'btn btn-danger',
@@ -50,7 +50,7 @@ $userDataProvider = $userSearchModel->search(Yii::$app->request->queryParams);
 
   ?>
   <? endif ?>
-  
+
    <? if (\app\components\mgcms\MgHelpers::getUserModel()->checkAccess('training', 'numerate')): ?>
   <?=
   Html::a(Yii::t('app', 'NUMERUJ'), ['numerate', 'id' => $model->id], [
@@ -66,7 +66,7 @@ $userDataProvider = $userSearchModel->search(Yii::$app->request->queryParams);
   <?= $form->errorSummary($model); ?>
 
     <input type="hidden" name="timestamp" value="<?=Date('Y-m-d H:i:s')?>"/>
-  
+
   <?= $form->field($model, 'name')->hiddenInput()->label(false) ?>
 
   <?=

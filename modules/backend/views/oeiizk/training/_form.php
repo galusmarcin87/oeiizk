@@ -33,7 +33,7 @@ use app\models\db\Training;
         'isNewRecord' => ($model->isNewRecord) ? 1 : 0
     ]
 ]);
-\mootensai\components\JsBlock::widget(['viewFile' => '_script', 'pos' => \yii\web\View::POS_END,
+\mootensai\components\JsBlock::widget(['viewFile' => '_scriptAddParticipant', 'pos' => \yii\web\View::POS_END,
     'viewParams' => [
         'class' => 'TrainingParticipant',
         'relID' => 'training-participant',
@@ -221,13 +221,13 @@ use app\models\db\Training;
       ]);
 
       ?>
-      
+
       <?=
       $form->field6md($model, 'certificate_template')->dropDownList( MgHelpers::arrayCombineFromOneArray(MgHelpers::getSettingOptionArray('szablony zaświadczeń')),['prompt' => '']);
 
       ?>
-      
-     
+
+
     </div>
 
 
@@ -308,7 +308,7 @@ use app\models\db\Training;
         ],
     ];
 
-    
+
     echo kartik\tabs\TabsX::widget([
         'items' => $forms,
         'position' => kartik\tabs\TabsX::POS_ABOVE,
