@@ -84,14 +84,16 @@ class TrainingController extends \app\components\mgcms\MgCmsController
 
   public function actionConferences($archive = false)
   {
-    $searchModel = new TrainingSearch();
-    $searchModel->types = [TrainingTemplate::TYPE_KONFERENCJA];
-    $searchModel->schoolYear = (int) substr(OeiizkHelpers::getCurrentSchoolYearStart(), 0, 4);
-    $searchModel->isArchive = $archive;
-    $dataProvider = $searchModel->searchFront(Yii::$app->request->queryParams);
-    return $this->render('conferences', [
-            'dataProvider' => $dataProvider
-    ]);
+      $searchModel = new TrainingSearch();
+      $searchModel->types = [TrainingTemplate::TYPE_KONFERENCJA];
+      if (!$archive) {
+          $searchModel->schoolYear = (int)substr(OeiizkHelpers::getCurrentSchoolYearStart(), 0, 4);
+      }
+        $searchModel->isArchive = $archive;
+        $dataProvider = $searchModel->searchFront(Yii::$app->request->queryParams);
+        return $this->render('conferences', [
+                'dataProvider' => $dataProvider
+        ]);
   }
 
   public function actionSignIn($hash)
