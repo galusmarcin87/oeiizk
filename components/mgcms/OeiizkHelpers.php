@@ -176,7 +176,7 @@ class OeiizkHelpers extends \yii\base\Component
 
     foreach ($user->getAttributes() as $attr => $value) {
       if ($attr == 'last_name') {
-        $value = $trainingParticipant->surname;
+        $value = $trainingParticipant->surname || $user->last_name;
       }
       if (strpos($attr, 'date') !== false) {
         $value = date('d.m.Y', strtotime($value));
@@ -230,7 +230,7 @@ class OeiizkHelpers extends \yii\base\Component
     $content = str_replace('{training.dateEndMonthGenitive}', OeiizkHelpers::getPolishMonthNameGenitive($model->date_end), $content);
     $content = str_replace('{training.end_year}', date('Y', strtotime($model->date_end)), $content);
     $content = str_replace('{training.end_day}', date('d', strtotime($model->date_end)), $content);
-    
+
     if (isset($model->lessons[0])) {
       $lesson = $model->lessons[0];
       $content = str_replace("{lesson.start_hour}", date('H:i', strtotime($lesson->date_start)), $content);
