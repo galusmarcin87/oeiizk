@@ -824,7 +824,7 @@ class TrainingController extends MgBackendController
       if ($lesson->training) {
         $Event = new \yii2fullcalendar\models\Event();
         $Event->id = $lesson->id;
-        $Event->title = $lesson->training->code . ': ' . $lesson->training->name . ', ' . ($lesson->lab ? $lesson->lab->shorterName : "");
+        $Event->title = ($lesson->lab ? $lesson->lab->shorterName.', ' : "").$lesson->training->code . ': ' . $lesson->training->name ;
         $Event->start = date('Y-m-d\TH:i:s\Z', strtotime($lesson->date_start));
         $Event->end = date('Y-m-d\TH:i:s\Z', strtotime($lesson->date_end));
         $Event->url = $lesson->link;
