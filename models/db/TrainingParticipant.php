@@ -47,7 +47,7 @@ class TrainingParticipant extends \app\models\mgcms\db\AbstractRecord
             [['is_reserve', 'is_paid', 'is_passed', 'is_print_certificate', 'is_certificate_printed'], 'integer', 'max' => 1]
         ];
     }
-    
+
     /**
      * @inheritdoc
      */
@@ -77,7 +77,7 @@ class TrainingParticipant extends \app\models\mgcms\db\AbstractRecord
             'is_print_certificate' => Yii::t('app', 'Is Print Certificate'),
         ];
     }
-    
+
     /**
      * @return \yii\db\ActiveQuery
      */
@@ -86,7 +86,7 @@ class TrainingParticipant extends \app\models\mgcms\db\AbstractRecord
         return $this->hasOne(\app\models\db\Training::className(), ['id' => 'training_id']);
     }
 
-        
+
     /**
      * @return \yii\db\ActiveQuery
      */
@@ -94,7 +94,7 @@ class TrainingParticipant extends \app\models\mgcms\db\AbstractRecord
     {
         return $this->hasOne(\app\models\mgcms\db\User::className(), ['id' => 'user_id']);
     }
-        
+
     /**
      * @return \yii\db\ActiveQuery
      */
@@ -102,7 +102,7 @@ class TrainingParticipant extends \app\models\mgcms\db\AbstractRecord
     {
         return $this->hasOne(\app\models\mgcms\db\User::className(), ['id' => 'created_by']);
     }
-    
+
     /**
      * @inheritdoc
      * @return \app\models\db\TrainingParticipantQuery the active query used by this AR class.
@@ -111,7 +111,7 @@ class TrainingParticipant extends \app\models\mgcms\db\AbstractRecord
     {
         return new \app\models\db\TrainingParticipantQuery(get_called_class());
     }
-    
+
     public function save($runValidaton = true, $attributes = null)
     {
 
@@ -120,17 +120,17 @@ class TrainingParticipant extends \app\models\mgcms\db\AbstractRecord
       }else{
           if($this->getOldAttribute('is_passed') == 1){
               $this->status = 'brak zaliczenia';
-          }
+          } 
       }
 
       $saved = parent::save($runValidaton, $attributes);
       return $saved;
     }
-    
+
     public function canByGenerated(){
       return !in_array($this->status, ['wykreślenie','rezygnacja przed zapisem','rezygnacja zamiast potwierdzenia','lista rezerwowa', self::STATUS_RESERVE]);
     }
-    
+
     public function canConfirm(){
         if($this->training->is_card_required && !$this->user->employment_card_id){
             return false;
