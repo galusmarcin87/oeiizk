@@ -176,7 +176,7 @@ class OeiizkHelpers extends \yii\base\Component
 
     foreach ($user->getAttributes() as $attr => $value) {
       if ($attr == 'last_name') {
-        $value = $trainingParticipant->surname || $user->last_name;
+        $value = $trainingParticipant->surname ?: $user->last_name;
       }
       if (strpos($attr, 'date') !== false) {
         $value = date('d.m.Y', strtotime($value));
