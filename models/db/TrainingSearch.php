@@ -411,7 +411,7 @@ class TrainingSearch extends Training
                 $query->andWhere(['>=', 'date_end', date('Y-m-d', strtotime('now'))]);
                 break;
             case -1:
-                $query->andWhere(['<', 'date_end', new \yii\db\Expression('now()')]);
+                $query->andWhere(['<=', 'date_end', new \yii\db\Expression('now()')]);
                 break;
             case 1:
                 $query->andWhere(['>', 'date_start', new \yii\db\Expression('now()')]);
