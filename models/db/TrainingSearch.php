@@ -295,7 +295,7 @@ class TrainingSearch extends Training
         }
 
         if ($this->isArchive) {
-            $query->andWhere(['is_promoted_pos' => 1]);
+            //$query->andWhere(['is_promoted_pos' => 1]);
             $query->andWhere(['<', 'training.date_end', new \yii\db\Expression('now()')]);
 
             if ($this->orderName) {
