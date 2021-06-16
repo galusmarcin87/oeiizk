@@ -829,11 +829,11 @@ class TrainingController extends MgBackendController
         $Event->end = date('Y-m-d\TH:i:s\Z', strtotime($lesson->date_end));
         $Event->url = $lesson->link;
           $Event->nonstandard = Json::encode([
-              'dateFrom' => $model->date_start,
-              'dateTo' => $model->date_end,
-              'code' => $model->training->code,
-              'lab' =>  ($model->lab ? $model->lab->shorterName : ''),
-              'lector'=>$model->training->lectorsStr,
+              'dateFrom' => $lesson->date_start,
+              'dateTo' => $lesson->date_end,
+              'code' => $lesson->training->code,
+              'lab' =>  ($lesson->lab ? $lesson->lab->shorterName : ''),
+              'lector'=>$lesson->training->lectorsStr,
           ]);
 
         $events[] = $Event;
