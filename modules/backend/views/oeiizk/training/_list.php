@@ -36,13 +36,6 @@ Prowadzący zajęcia: <?= $model->lectorsStr ?>
   <? foreach ($model->trainingParticipants as $trainingParticipant): ?>
     <?if(!$trainingParticipant->canByGenerated()) continue;?>
 
-    <? if ($index % 8 == 0): ?>
-        </table>
-        <newpage/>
-        <table style="width: 100%;border: 1px solid black;border-collapse:collapse;" border="1"><tbody>
-        <?=$this->render('_listTableHeader')?>
-    <? endif ?>
-
     <tr>
       <td><?= $trainingParticipant->order ?></td>
       <td><?= $trainingParticipant->user->last_name . ' ' . $trainingParticipant->user->first_name ?></td>

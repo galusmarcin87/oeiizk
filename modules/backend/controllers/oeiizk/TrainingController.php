@@ -403,32 +403,32 @@ class TrainingController extends MgBackendController
 //    MgHelpers::registerCssFile('@vendor/kartik-v/yii2-mpdf/assets/kv-mpdf-bootstrap.min.css');
 //    return $content;
 
-    $pdf = new \kartik\mpdf\Pdf([
-        'mode' => \kartik\mpdf\Pdf::MODE_UTF8,
-        'format' => \kartik\mpdf\Pdf::FORMAT_A4,
-        'orientation' => \kartik\mpdf\Pdf::ORIENT_LANDSCAPE,
-        'destination' => \kartik\mpdf\Pdf::DEST_BROWSER,
-        'content' => $content,
-        'cssFile' => '@vendor/kartik-v/yii2-mpdf/assets/kv-mpdf-bootstrap.min.css',
-        'cssInline' => 'table{border: 1px solid black; width: 100%;border-collapse: separate;
+      $pdf = new \kartik\mpdf\Pdf([
+          'mode' => \kartik\mpdf\Pdf::MODE_UTF8,
+          'format' => \kartik\mpdf\Pdf::FORMAT_A4,
+          'orientation' => \kartik\mpdf\Pdf::ORIENT_LANDSCAPE,
+          'destination' => \kartik\mpdf\Pdf::DEST_BROWSER,
+          'content' => $content,
+          'cssFile' => '@vendor/kartik-v/yii2-mpdf/assets/kv-mpdf-bootstrap.min.css',
+          'cssInline' => 'table{border: 1px solid black; width: 100%;border-collapse: separate;
     border-spacing: 0;} 
           table td{
           border: 1px solid #000;
           padding: 3px;
           
         }',
-        'marginTop' => 30,
-        'marginBottom' => 30,
-        'options' => [
-            'title' => \Yii::$app->name,
-            'defaultheaderline' => 0, //for header
-            'defaultfooterline' => 0  //for footer
-        ],
-        'methods' => [
-            'SetHeader' => [MgHelpers::getSetting('dokumentacja pozioma - nagłówek', true)],
-            'SetFooter' => ['{PAGENO}/{nbpg}' . MgHelpers::getSetting('dokumentacja pozioma - stopka', true)],
-        ]
-    ]);
+          'marginTop' => 30,
+          'marginBottom' => 30,
+          'options' => [
+              'title' => \Yii::$app->name,
+              'defaultheaderline' => 0, //for header
+              'defaultfooterline' => 0  //for footer
+          ],
+          'methods' => [
+              'SetHeader' => [MgHelpers::getSetting('dokumentacja pozioma - nagłówek', true)],
+              'SetFooter' => ['{PAGENO}/{nbpg}' . MgHelpers::getSetting('dokumentacja pozioma - stopka', true)],
+          ]
+      ]);
 
     return $pdf->render();
   }
