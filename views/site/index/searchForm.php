@@ -206,4 +206,14 @@ $form->field($searchModel, 'orderName')->hiddenInput()->label(false)
   });
 
   $('input[name="TrainingSearch[category_ids][]"]:checked').change();
+
+  $('#filtersCollapse [type=checkbox]').each(function(index){
+
+    var label = $(this).parent().find('label');
+    if(label){
+      $(label).attr('tabindex',index);
+      $(this).attr('tabindex',index);
+    }
+    console.log(label);
+  })
 </script>
