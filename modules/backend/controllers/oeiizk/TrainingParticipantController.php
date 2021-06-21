@@ -70,9 +70,12 @@ class TrainingParticipantController extends MgBackendController
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
-    public function actionCreate()
+    public function actionCreate($trainingId = false)
     {
         $model = new TrainingParticipant();
+        if($trainingId){
+            $model->training_id = $trainingId;
+        }
 
         if ($model->loadAll(Yii::$app->request->post()) && $model->saveAll()) {
             return $this->redirect(['view', 'training_id' => $model->training_id, 'user_id' => $model->user_id]);

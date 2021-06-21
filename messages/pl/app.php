@@ -32,12 +32,12 @@ $arr = [
     'Training Participants' => 'Uczestnicy szkolenia',
     'Training Participant' => 'Uczestnik szkolenia',
     'Password has been already used.' => 'Hasło było już używane.',
-    
-    
-    
-    
-    
-    
+    'Create Training Participant' => 'Dodaj uczestnika szkolenia',
+
+
+
+
+
     'Import from Excell' => 'Import z pliku Excella',
     'Lessons' => 'Zajęcia',
     'Lesson' => 'Zajęcia',

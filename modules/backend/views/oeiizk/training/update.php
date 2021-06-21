@@ -39,6 +39,17 @@ $controller = Yii::$app->controller->id;
     ?>
   <? endif ?>
 
+    <? if (\app\components\mgcms\MgHelpers::getUserModel()->checkAccess($controller, 'update-participants')): ?>
+        <?=
+        Html::a(Yii::t('app', 'Dodaj uczestnika'), ['oeiizk/training-participant/create', 'trainingId' => $model->id], [
+                'class' => 'btn btn-danger',
+                'target' => '_blank'
+            ]
+        )
+
+        ?>
+    <? endif ?>
+
   <?=
   $this->render(app\components\mgcms\OeiizkHelpers::isInRoles([User::ROLE_LECTOR, User::ROLE_COACH, User::ROLE_DIRECTOR]) ? '_formLector' : '_form', [
       'model' => $model,

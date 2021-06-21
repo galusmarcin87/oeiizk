@@ -61,6 +61,17 @@ $userDataProvider = $userSearchModel->search(Yii::$app->request->queryParams);
   ?>
   <? endif ?>
 
+    <? if (\app\components\mgcms\MgHelpers::getUserModel()->checkAccess('training', 'update-participants')): ?>
+        <?=
+        Html::a(Yii::t('app', 'Dodaj uczestnika'), ['oeiizk/training-participant/create', 'trainingId' => $model->id], [
+                'class' => 'btn btn-danger',
+                'target' => '_blank'
+            ]
+        )
+
+        ?>
+    <? endif ?>
+
   <?php $form = ActiveForm::begin(); ?>
 
   <?= $form->errorSummary($model); ?>
