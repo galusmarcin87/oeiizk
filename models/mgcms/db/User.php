@@ -41,7 +41,7 @@ use yii\web\UploadedFile;
  * @property string $academic_title
  * @property string $phone
  * @property integer $is_special_account
- * @property integer $credibilityCalc 
+ * @property integer $credibilityCalc
  * @property integer $is_newsletter
  * @property string $comments
  * @property integer $is_deleted
@@ -156,7 +156,7 @@ class User extends \app\models\mgcms\db\AbstractRecord implements IdentityInterf
   public $uploadEmploymentFile;
   public $acceptTerms;
   public $scenarioDelete = false;
-  
+
   public $importTrainingIds = false;
   public $importUserId = false;
 
@@ -270,7 +270,7 @@ class User extends \app\models\mgcms\db\AbstractRecord implements IdentityInterf
         'oldFormPassword' => 'Podaj stare hasło',
         'genderStr' => 'Płeć',
         'is_profiled_offer_enabled' => 'Sprofilowana oferta'
-        
+
     ];
   }
 
@@ -585,7 +585,7 @@ class User extends \app\models\mgcms\db\AbstractRecord implements IdentityInterf
   }
 
   /**
-   * @return \yii\db\ActiveQuery 
+   * @return \yii\db\ActiveQuery
    */
   public function getUserEducationalLevels()
   {
@@ -593,7 +593,7 @@ class User extends \app\models\mgcms\db\AbstractRecord implements IdentityInterf
   }
 
   /**
-   * @return \yii\db\ActiveQuery 
+   * @return \yii\db\ActiveQuery
    */
   public function getEducationalLevels()
   {
@@ -766,7 +766,7 @@ class User extends \app\models\mgcms\db\AbstractRecord implements IdentityInterf
 
     return ($this->first_name ? $this->first_name . ' ' . $this->last_name : $this->username);
   }
-  
+
   public function getToStringWithAcademicTitle(){
     return ($this->academic_title ? $this->academic_title . ' ' : '') . ($this->first_name ? $this->first_name . ' ' . $this->last_name : $this->username);
   }
@@ -811,7 +811,9 @@ class User extends \app\models\mgcms\db\AbstractRecord implements IdentityInterf
             return true;
           }
         } else {
-          $rolesToAdd[] = [$controller, $action, (string) $role->id];
+            if(!in_array([$controller, $action, (string) $role->id], $rolesToAdd)){
+                $rolesToAdd[] = [$controller, $action, (string) $role->id];
+            }
         }
       }
     }
@@ -967,7 +969,7 @@ class User extends \app\models\mgcms\db\AbstractRecord implements IdentityInterf
           return $x->name;
         }, $this->getInstitutions()->all()));
   }
-  
+
   public function getFullInstitutionsStr($delimiter = '<br/>')
   {
     return join($delimiter,
@@ -977,7 +979,7 @@ class User extends \app\models\mgcms\db\AbstractRecord implements IdentityInterf
   }
 
   /**
-   * 
+   *
    * @return \app\models\db\Institution
    */
   public function getFirstInstitution()
@@ -988,28 +990,28 @@ class User extends \app\models\mgcms\db\AbstractRecord implements IdentityInterf
     }
     /* @var $institution app\models\db\Institution */
     $institution = $institutions[0];
-    
-    
+
+
     return $institution;
   }
-  
+
   public function getFirstInstitutionStr()
   {
     $institution = $this->firstinstitution;
     if(!$institution){
       return false;
     }
-    
+
     return $institution->name.'<br/>'.$institution->postcode.' '.$institution->city;
   }
-  
+
   public function getFirstInstitutionCode()
   {
     $institution = $this->firstinstitution;
     if(!$institution){
       return false;
     }
-    
+
     return $institution->code;
   }
 
@@ -1093,7 +1095,7 @@ class User extends \app\models\mgcms\db\AbstractRecord implements IdentityInterf
     }
 
   /**
-   * 
+   *
    * @param integer $agreementId
    */
   public function hasAgreementAccepted($agreementId)
@@ -1112,7 +1114,7 @@ class User extends \app\models\mgcms\db\AbstractRecord implements IdentityInterf
   }
 
   /**
-   * 
+   *
    * @param \app\models\db\Training $training
    * @return \app\models\db\TrainingParticipant
    */
@@ -1125,9 +1127,9 @@ class User extends \app\models\mgcms\db\AbstractRecord implements IdentityInterf
     }
     return false;
   }
-  
+
   /**
-   * 
+   *
    * @param \app\models\db\Workshop $workshop
    * @return \app\models\db\WorkshopUser
    */
@@ -1162,9 +1164,9 @@ class User extends \app\models\mgcms\db\AbstractRecord implements IdentityInterf
   {
     return (boolean) \app\models\db\TrainingModulePresence::findByCondition(['user_id' => $this->id, 'training_module_id' => $module->id])->count();
   }
-  
+
   public function getGenderStr(){
-    
+
     return isset(self::GENDERS[$this->gender]) ? Yii::t('app', self::GENDERS[$this->gender]) : '';
   }
 }
