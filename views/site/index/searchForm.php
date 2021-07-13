@@ -22,8 +22,8 @@ function getCheckboxListOptions($offset){
         'item' => function ($index, $label, $name, $checked, $value) {
             $uid = uniqid();
             return '<div class="col-12 col-sm-4 col-md-4 col-lg-2">
-                    <input type="checkbox" tabindex="'.($uid. $index).'" id="' . $name . $uid . '" name="' . $name . '" value="' . $value . '" ' . ($checked ? 'checked="checked"' : '') . '>
-                    <label tabindex="'.$uid . $index.'"  for="' . $name . $uid . '">' . $label . '</label>
+                    <input type="checkbox" tabindex="0" id="' . $name . $uid . '" name="' . $name . '" value="' . $value . '" ' . ($checked ? 'checked="checked"' : '') . '>
+                    <label tabindex="0"  for="' . $name . $uid . '">' . $label . '</label>
                   </div>';
         }
     ];
@@ -207,13 +207,13 @@ $form->field($searchModel, 'orderName')->hiddenInput()->label(false)
 
   $('input[name="TrainingSearch[category_ids][]"]:checked').change();
 
-  $('#filtersCollapse [type=checkbox]').each(function(index){
-
-    var label = $(this).parent().find('label');
-    if(label){
-      $(label).attr('tabindex',index);
-      $(this).attr('tabindex',index);
+  $('body').on('keypress','[type="checkbox"] + label', function (event) {
+    if (event.which === 13) {
+      const $input =  $(this).siblings();
+      const isChecked = $input.is(':checked');
+      $input.prop('checked', !isChecked);
     }
-    console.log(label);
-  })
+    event.preventDefault();
+    event.stopPropagation()
+  });
 </script>
