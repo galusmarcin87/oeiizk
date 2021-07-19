@@ -6,6 +6,7 @@ use yii\helpers\Html;
 use kartik\export\ExportMenu;
 use kartik\grid\GridView;
 use app\components\mgcms\MgHelpers;
+use app\components\mgcms\yii\ActionColumn;
 
 $this->title = Yii::t('app', 'Training Participants');
 $this->params['breadcrumbs'][] = $this->title;
@@ -34,6 +35,16 @@ $this->registerJs($search);
   $gridColumn = [
       ['class' => 'yii\grid\SerialColumn'],
       ['attribute' => 'id', 'visible' => false],
+      [
+          'class' => ActionColumn::className(),
+          'template' => '{update}',
+          'controller' => $controller,
+          'buttons' => [
+              'update' => function ($url, $model) {
+                  return  \yii\helpers\Html::a('<span class="glyphicon glyphicon-pencil"></span>', $url, ['title' => Yii::t('app', 'Update')]);
+              },
+          ],
+      ],
       'order',
       [
           'attribute' => 'training_id',

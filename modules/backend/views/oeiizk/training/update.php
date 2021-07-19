@@ -17,7 +17,7 @@ $controller = Yii::$app->controller->id;
 
   <h1><?= Html::encode($this->title) ?></h1>
 
-  <? if (\app\components\mgcms\MgHelpers::getUserModel()->checkAccess($controller, 'update-participants')): ?>
+  <? if (0 && \app\components\mgcms\MgHelpers::getUserModel()->checkAccess($controller, 'update-participants')): ?>
     <?=
     Html::a(Yii::t('app', 'Uczestnicy'), ['update-participants', 'id' => $model->id], [
         'class' => 'btn btn-danger',
@@ -48,6 +48,16 @@ $controller = Yii::$app->controller->id;
         )
 
         ?>
+    <? endif ?>
+
+    <? if (\app\components\mgcms\MgHelpers::getUserModel()->checkAccess('training', 'numerate')): ?>
+    <?=
+    Html::a(Yii::t('app', 'Numeruj uczestników'), ['numerate', 'id' => $model->id], [
+            'class' => 'btn btn-success right',
+        ]
+    )
+
+    ?>
     <? endif ?>
 
   <?=
