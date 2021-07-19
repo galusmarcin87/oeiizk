@@ -128,6 +128,10 @@ class SiteController extends \app\components\mgcms\MgCmsController
   {
     if (!empty($post['newsletter-email'])) {
       $email = $post['newsletter-email'];
+        if (NewsletterEmail::findOne(['email' => $email])) {
+            MgHelpers::setFlashError('Taki mail już istnieje w bazie.');
+            return $this->goBack();
+        }
       $emailValidator = new \yii\validators\EmailValidator();
       if (!$emailValidator->validate($email)) {
         MgHelpers::setFlashError('Nieprawidłowy email');
@@ -166,7 +170,7 @@ class SiteController extends \app\components\mgcms\MgCmsController
         $agreementUserModel->agreement_id = $newsletterAgreement->id;
         $agreementUserModel->save();
       } catch (Exception $e) {
-        
+
       }
     }
 
@@ -331,7 +335,7 @@ class SiteController extends \app\components\mgcms\MgCmsController
     if (!$user) {
       $this->throw404();
     }
-    
+
     if(in_array($user->status, [User::STATUS_TEMPORARY_USER,User::STATUS_INACTIVE])){
       $this->throw404();
     }
